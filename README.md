@@ -2,13 +2,11 @@
 
 <img src="./img/logo.png" width="30">  
 
-# 📚 Tudo Sobre HTML</h1>
+# 📚 HTML Lab</h1>
 
 **Aulas visuais e interativas sobre HTML para iniciantes.**
 *Aprende mexendo, não decorando.*
 
-[![8 aulas](https://img.shields.io/badge/aulas-8-FF6B35?style=flat-square&labelColor=2B1810)](#-as-aulas)
-[![Zero dependências](https://img.shields.io/badge/dependências-0-2B1810?style=flat-square)](#%EF%B8%8F-stack)
 [![HTML5](https://img.shields.io/badge/html5-E34C26?style=flat-square&logo=html5&logoColor=white)](#%EF%B8%8F-stack)
 [![CSS3](https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white)](#%EF%B8%8F-stack)
 [![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](#%EF%B8%8F-stack)
@@ -70,7 +68,7 @@ Cada aula é uma página independente sobre um tema específico do HTML. Você p
 ## 🗂️ Estrutura
 
 ```
-tudo-sobre-html/
+html-lab/
 ├── index.html              # Landing com cards de todas as 8 aulas
 ├── css/
 │   └── style.css           # Estilos compartilhados da landing
