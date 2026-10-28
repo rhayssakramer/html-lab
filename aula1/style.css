@@ -1,5 +1,6 @@
 /* IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 /* VARIÁVEIS */
 :root {
@@ -67,8 +68,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-style: bold;
+    font-weight: bolder;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    letter-spacing: 0.05em;
 }
 
 .nav {
