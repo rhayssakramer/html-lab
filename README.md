@@ -101,8 +101,8 @@ Abre direto no navegador:
 
 ```bash
 # clone
-git clone https://github.com/brianmonteiro54/tudo-sobre-html.git
-cd tudo-sobre-html
+git clone https://github.com/rhayssakramer/html-lab.git
+cd html-lab
 
 # abre o index.html com duplo-clique, ou serve um http simples:
 python -m http.server 8000
@@ -131,7 +131,7 @@ Na página inicial, há uma seção com **6 hacks práticos** que você precisa 
 Está hospedado em **GitHub Pages** automaticamente:
 
 ```
-https://rhayssakramer.github.io/tudo-sobre-html/
+https://rhayssakramer.github.io/html-lab/
 ```
 
 Qualquer push na branch `main` atualiza o site automaticamente.
