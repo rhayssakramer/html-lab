@@ -138,18 +138,6 @@ Qualquer push na branch `main` atualiza o site automaticamente.
 
 ---
 
-## 🤝 Contribuindo
-
-Issues e PRs são bem-vindos, especialmente para:
-
-- Adicionar novas aulas (CSS, JavaScript, Acessibilidade, etc.)
-- Melhorar exemplos interativos
-- Tradução para inglês ou espanhol
-- Melhorar acessibilidade (ARIA, contraste, foco visível)
-- Corrigir bugs
-
----
-
 ## 👩🏼‍💻 Autora
 
 <table>
@@ -165,12 +153,6 @@ Issues e PRs são bem-vindos, especialmente para:
     </td>
   </tr>
 </table>
-
----
-
-## 📄 Licença
-
-MIT — usa, adapta, distribui. Só dá os créditos. 🏷️
 
 ---
 
