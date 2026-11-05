@@ -147,9 +147,9 @@ Qualquer push na branch `main` atualiza o site automaticamente.
         <strong>Rhayssa Kramer</strong>
       </a>
       <br>
-      <span>Sr. Assoc, Full-Stack Development | Engenheira de Plataforma</span>
+      <span>Assoc, Full-Stack Development</span>
       <br>
-      <small>Avanade | Tech Enthusiast | Community Speaker</small>
+      <small>Avanade | Tech Content Creator | Community Speaker</small>
     </td>
   </tr>
 </table>
@@ -162,6 +162,8 @@ Feito com 🧡 para quem quer aprender HTML de verdade
 
 *"Os alunos aprendem mexendo, não decorando."*
 
+</div>
+
 <div align="center">
 
 ### ⭐ Se este projeto foi útil, considere deixar uma estrela no GitHub!
@@ -169,7 +171,5 @@ Feito com 🧡 para quem quer aprender HTML de verdade
 © 2026 Rhayssa Kramer. Todos os direitos reservados.
 
 <a href="https://github.com/rhayssakramer"><img src="https://github.com/rhayssakramer/rhayssakramer/blob/main/img/rodape.png" width="100%"></a>
-
-</div>
 
 </div>
