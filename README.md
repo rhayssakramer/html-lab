@@ -34,7 +34,7 @@ Cada aula é uma página independente sobre um tema específico do HTML. Você p
 | **[01](aula1/)** | Introdução ao HTML | Fundamentos | Tags · Estrutura · Elementos · Anatomia de uma tag |
 | **[02](aula2/)** | Formatando Textos | Textos | Tags de texto · Hierarquia · Semântica |
 | **[03](aula3/)** | Navegação com Links | Links | Tag `<a>` · Navegação interna e externa · Âncoras |
-| **[04](aula4/)** | Inserindo Imagens | Imagens | Tag `<img>` · Alt · Figure · Picture · Performance |
+| **[04](aula4/)** | Inserindo Imagens | Imagens | Tag `<img>` · Alt · Figure · Picture · Formatos · Lazy loading · Acessibilidade |
 | **[05](aula5/)** | Criando Formulários | Formulários | Form · Input · Textarea · Select · Validação |
 | **[06](aula6/)** | Trabalhando com Listas | Listas | UL · OL · LI · DL · Aninhamento · Semântica |
 | **[07](aula7/)** | Audio e Vídeo | Mídia | Tag `<audio>` · Tag `<video>` · Formatos · Controles |
@@ -87,6 +87,7 @@ html-lab/
 │   └── script.js          # Interatividade (exemplos, widgets)
 ├── aula2/
 ├── aula3/
+├── aula4/
 ├── ...
 └── aula8/
 ```
