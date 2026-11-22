@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4 - Inserindo Imagens | HTML Lab</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../"><img src="../img/logo.png" alt="Logo" class="logo-icon"></a>
+                <h1>HTMLAB</h1>
+            </div>
+            <nav class="nav">
+                <a href="../#como-funciona">Sobre</a>
+                <div class="nav-dropdown">
+                    <a href="../#aulas" aria-controls="topicos-aula">Aulas</a>
+                    <ul class="nav-topicos" id="topicos-aula" aria-label="Tópicos da aula 4">
+                        <li><a href="#o-que-sao-imagens">1. O que são Imagens</a></li>
+                        <li><a href="#tag-img">2. A Tag img</a></li>
+                        <li><a href="#atributo-src">3. Atributo src</a></li>
+                        <li><a href="#atributo-alt">4. Atributo alt</a></li>
+                        <li><a href="#dimensoes">5. Dimensões</a></li>
+                        <li><a href="#tag-figure">6. Figure</a></li>
+                        <li><a href="#tag-picture">7. Picture</a></li>
+                        <li><a href="#formatos">8. Formatos</a></li>
+                        <li><a href="#lazy-loading">9. Lazy Loading</a></li>
+                        <li><a href="#performance">10. Performance</a></li>
+                        <li><a href="#boas-praticas">11. Boas Práticas</a></li>
+                        <li><a href="#exemplos-praticos">12. Exemplos</a></li>
+                        <li><a href="#acessibilidade">13. Acessibilidade</a></li>
+                        <li><a href="#desafio">14. Desafio</a></li>
+                    </ul>
+                </div>
+                <a href="../#recursos">Recursos</a>
+                <a href="https://github.com/rhayssakramer/tudo-sobre-html" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="aula-container">
+        <section class="aula-header-hero">
+            <div class="hero-content">
+                <h1>Inserindo <span class="highlight">Imagens</span></h1>
+                <p class="hero-text">Aprenda como incluir imagens em suas páginas HTML, otimizá-las para melhor performance, usar formatos modernos e garantir acessibilidade.</p>
+                <button id="btn-hero" class="btn btn-primary">Bora começar 🚀</button>
+            </div>
+            <div class="hero-illustration">
+                <img src="../img/html-3d.webp" alt="HTML 3D" class="hero-image">
+            </div>
+        </section>
+
+        <section class="toc-section" id="toc-section">
+            <h2>📚 Índice de Conteúdos</h2>
+            <nav class="toc-list">
+                <a href="#o-que-sao-imagens">1. O que são Imagens</a>
+                <a href="#tag-img">2. A Tag &lt;img&gt;</a>
+                <a href="#atributo-src">3. Atributo src</a>
+                <a href="#atributo-alt">4. Atributo alt</a>
+                <a href="#dimensoes">5. Dimensões</a>
+                <a href="#tag-figure">6. Figure</a>
+                <a href="#tag-picture">7. Picture</a>
+                <a href="#formatos">8. Formatos</a>
+                <a href="#lazy-loading">9. Lazy Loading</a>
+                <a href="#performance">10. Performance</a>
+                <a href="#boas-praticas">11. Boas Práticas</a>
+                <a href="#exemplos-praticos">12. Exemplos</a>
+                <a href="#acessibilidade">13. Acessibilidade</a>
+                <a href="#desafio">14. Desafio</a>
+            </nav>
+        </section>
+
+        <section class="content-section" id="o-que-sao-imagens">
+            <span class="section-label">01 · O QUE SÃO IMAGENS NA WEB</span>
+            <h1>Imagens: a linguagem <span class="highlight">visual</span> da web</h1>
+            <div class="content-block">
+                <p>Imagens são arquivos digitais que enriquecem a experiência do usuário. Transmitem informações rapidamente e melhoram a retenção de conteúdo.</p>
+                <h3>Por que usar imagens?</h3>
+                <ul>
+                    <li><strong>Comunicação visual</strong>: transmitem informações em milissegundos</li>
+                    <li><strong>Engajamento</strong>: conteúdo visual atrai e mantém atenção</li>
+                    <li><strong>Memória</strong>: pessoas lembram 65% de imagens vs 10% de texto</li>
+                    <li><strong>SEO</strong>: imagens otimizadas ajudam no posicionamento</li>
+                </ul>
+                <div class="info-box info">
+                    <strong>💡 Dica:</strong> Uma imagem bem otimizada pode fazer diferença entre um site rápido e um lento!
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="tag-img">
+            <span class="section-label">02 · A TAG &lt;img&gt;</span>
+            <h1>A tag mais importante para <span class="highlight">imagens</span></h1>
+            <div class="content-block">
+                <p>A tag <code>&lt;img&gt;</code> é a forma padrão de inserir imagens. É uma tag <strong>void</strong> (vazia).</p>
+                <h3>Sintaxe básica</h3>
+                <pre><code class="code-block">&lt;img src="caminho/imagem.jpg" alt="Descrição"&gt;</code></pre>
+                <h3>Atributos essenciais</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>src</code></td><td>URL da imagem (obrigatório)</td></tr>
+                        <tr><td><code>alt</code></td><td>Texto alternativo (obrigatório)</td></tr>
+                        <tr><td><code>width</code></td><td>Largura em pixels</td></tr>
+                        <tr><td><code>height</code></td><td>Altura em pixels</td></tr>
+                        <tr><td><code>loading</code></td><td>Lazy loading (lazy/eager)</td></tr>
+                    </tbody>
+                </table>
+                <div class="info-box warning">
+                    <strong>⚠️ Importante:</strong> A tag <code>&lt;img&gt;</code> é autofechável. Não feche com <code>&lt;/img&gt;</code>!
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="atributo-src">
+            <span class="section-label">03 · ATRIBUTO src</span>
+            <h1>Especificando o <span class="highlight">caminho</span> da imagem</h1>
+            <div class="content-block">
+                <p>O atributo <code>src</code> define o caminho ou URL da imagem. É obrigatório.</p>
+                <h3>Tipos de caminho</h3>
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>Caminho Relativo</h4>
+                        <pre><code class="code-block">&lt;img src="images/foto.jpg" alt="Foto"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>Caminho Absoluto</h4>
+                        <pre><code class="code-block">&lt;img src="/images/foto.jpg" alt="Foto"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>URL Completa</h4>
+                        <pre><code class="code-block">&lt;img src="https://ex.com/img.jpg" alt="Img"&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="atributo-alt">
+            <span class="section-label">04 · ATRIBUTO alt</span>
+            <h1>Tornando imagens <span class="highlight">acessíveis</span></h1>
+            <div class="content-block">
+                <p>O atributo <code>alt</code> fornece descrição textual. Essencial para acessibilidade.</p>
+                <h3>Como escrever um bom alt?</h3>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>❌ Errado</h4>
+                        <pre><code class="code-block">&lt;img src="gato.jpg" alt="gato"&gt;
+&lt;img src="foto.jpg" alt="imagem"&gt;</code></pre>
+                    </div>
+                    <div class="column">
+                        <h4>✅ Correto</h4>
+                        <pre><code class="code-block">&lt;img src="gato.jpg" alt="Gato laranja dormindo"&gt;
+&lt;img src="foto.jpg" alt="Equipe reunida"&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="dimensoes">
+            <span class="section-label">05 · DIMENSÕES: width E height</span>
+            <h1>Controlando o tamanho da <span class="highlight">imagem</span></h1>
+            <div class="content-block">
+                <p>Use width e height para evitar layout shift.</p>
+                <pre><code class="code-block">&lt;img src="foto.jpg" alt="Foto" width="300" height="200"&gt;
+&lt;img src="foto.jpg" alt="Foto" width="300" height="auto"&gt;</code></pre>
+                <h3>Para responsividade</h3>
+                <pre><code class="code-block">img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section" id="tag-figure">
+            <span class="section-label">06 · TAG &lt;figure&gt;</span>
+            <h1>Agrupando imagens com <span class="highlight">contexto</span></h1>
+            <div class="content-block">
+                <p>A tag <code>&lt;figure&gt;</code> agrupa conteúdo visual com legenda.</p>
+                <pre><code class="code-block">&lt;figure&gt;
+    &lt;img src="grafico.png" alt="Gráfico Q1"&gt;
+    &lt;figcaption&gt;Gráfico de vendas do primeiro trimestre&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section" id="tag-picture">
+            <span class="section-label">07 · TAG &lt;picture&gt;</span>
+            <h1>Imagens adaptadas a cada <span class="highlight">dispositivo</span></h1>
+            <div class="content-block">
+                <p>A tag <code>&lt;picture&gt;</code> serve diferentes imagens por tamanho de tela.</p>
+                <pre><code class="code-block">&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="img-pequena.jpg"&gt;
+    &lt;img src="img-grande.jpg" alt="Imagem responsiva"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section" id="formatos">
+            <span class="section-label">08 · FORMATOS DE IMAGEM</span>
+            <h1>Escolhendo o formato <span class="highlight">ideal</span></h1>
+            <div class="content-block">
+                <table class="content-table">
+                    <thead><tr><th>Formato</th><th>Uso</th><th>Suporte</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>JPEG</strong></td><td>Fotos, muitas cores</td><td>✅ Excelente</td></tr>
+                        <tr><td><strong>PNG</strong></td><td>Transparência, logos</td><td>✅ Excelente</td></tr>
+                        <tr><td><strong>WebP</strong></td><td>Web (melhor compressão)</td><td>✅ Moderno</td></tr>
+                        <tr><td><strong>SVG</strong></td><td>Ícones, vetoriais</td><td>✅ Excelente</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section" id="lazy-loading">
+            <span class="section-label">09 · LAZY LOADING</span>
+            <h1>Carregando imagens sob <span class="highlight">demanda</span></h1>
+            <div class="content-block">
+                <p>Lazy loading adia o carregamento até a imagem ficar visível.</p>
+                <pre><code class="code-block">&lt;img src="imagem.jpg" alt="Imagem" loading="lazy"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section" id="performance">
+            <span class="section-label">10 · OTIMIZAÇÃO DE PERFORMANCE</span>
+            <h1>Tornando imagens <span class="highlight">leves</span> e rápidas</h1>
+            <div class="content-block">
+                <h3>Checklist</h3>
+                <ul>
+                    <li>✅ Largura e altura definidas</li>
+                    <li>✅ Alt descritivo</li>
+                    <li>✅ Formato correto (WebP)</li>
+                    <li>✅ Comprimida</li>
+                    <li>✅ Lazy loading</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="boas-praticas">
+            <span class="section-label">11 · BOAS PRÁTICAS</span>
+            <h1>Checklist essencial para <span class="highlight">imagens</span></h1>
+            <div class="content-block">
+                <h3>Sempre faça</h3>
+                <ul>
+                    <li>✅ Use atributo <code>alt</code> SEMPRE</li>
+                    <li>✅ Defina <code>width</code> e <code>height</code></li>
+                    <li>✅ Optimize tamanho antes de enviar</li>
+                </ul>
+                <h3>Nunca faça</h3>
+                <ul>
+                    <li>❌ Não use <code>alt=""</code> para imagens importantes</li>
+                    <li>❌ Não carregue imagens maiores que o container</li>
+                    <li>❌ Não ignore performance</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="exemplos-praticos">
+            <span class="section-label">12 · EXEMPLOS PRÁTICOS</span>
+            <h1>Código pronto para <span class="highlight">usar</span></h1>
+            <div class="content-block">
+                <h3>Exemplo 1: Responsiva</h3>
+                <pre><code class="code-block">&lt;img src="gato.jpg" alt="Gato laranja" width="600" height="400" loading="lazy" style="max-width: 100%;"&gt;</code></pre>
+                <h3>Exemplo 2: Picture com WebP</h3>
+                <pre><code class="code-block">&lt;picture&gt;
+    &lt;source srcset="foto.webp" type="image/webp"&gt;
+    &lt;img src="foto.jpg" alt="Foto" loading="lazy"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="content-section" id="acessibilidade">
+            <span class="section-label">13 · ACESSIBILIDADE EM IMAGENS</span>
+            <h1>Incluindo todos com <span class="highlight">imagens</span></h1>
+            <div class="content-block">
+                <p>Pessoas com deficiência visual precisam de descrições. É lei (WCAG 2.1).</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="desafio">
+            <span class="section-label">14 · DESAFIO DA AULA</span>
+            <h1>Coloque em <span class="highlight">prática</span>!</h1>
+            <div class="content-block">
+                <div class="challenge-box">
+                    <h4>✅ Crie uma galeria com 5+ imagens</h4>
+                    <ul>
+                        <li>Alt descritivo em cada imagem</li>
+                        <li>Use &lt;figure&gt; e &lt;figcaption&gt;</li>
+                        <li>Lazy loading habilitado</li>
+                        <li>Responsiva</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section">
+            <h2>Pronto para começar?</h2>
+            <p>Agora que você sabe inserir imagens no HTML, está pronto para deixar suas páginas muito mais visuais!</p>
+            <div class="cta-buttons">
+                <a href="../aula3/index.html" class="btn btn-secondary"><img src="../img/right-arrow.png" alt="←" class="btn-icon-left"> Voltar para Aulas</a>
+                <a href="../aula5/index.html" class="btn btn-primary">Próxima Aula <img src="../img/right-arrow.png" alt="→" class="btn-icon"></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-to-top" onclick="scrollToTop()"><img src="../img/next.png" alt="↑"></button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 <a href="https://github.com/rhayssakramer/tudo-sobre-html">HTML Lab</a>. Feito com 🧡 para quem quer aprender HTML de verdade.</p>
+            <div class="footer-links">
+                <a href="../">Sobre</a>
+                <a href="../">Aulas</a>
+                <a href="https://github.com/rhayssakramer" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
