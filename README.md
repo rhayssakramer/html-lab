@@ -35,7 +35,7 @@ Cada aula é uma página independente sobre um tema específico do HTML. Você p
 | **[02](aula2/)** | Formatando Textos | Textos | Tags de texto · Hierarquia · Semântica |
 | **[03](aula3/)** | Navegação com Links | Links | Tag `<a>` · Navegação interna e externa · Âncoras |
 | **[04](aula4/)** | Inserindo Imagens | Imagens | Tag `<img>` · Alt · Figure · Picture · Formatos · Lazy loading · Acessibilidade |
-| **[05](aula5/)** | Criando Formulários | Formulários | Form · Input · Textarea · Select · Validação |
+| **[05](aula5/)** | Criando Formulários | Formulários | Form · Todos os tipos de input · Textarea · Select · Datalist · Label e Fieldset · Validação nativa · Constraint Validation API · Autocomplete · FormData · Segurança · Acessibilidade · Hacks avançados |
 | **[06](aula6/)** | Trabalhando com Listas | Listas | UL · OL · LI · DL · Aninhamento · Semântica |
 | **[07](aula7/)** | Audio e Vídeo | Mídia | Tag `<audio>` · Tag `<video>` · Formatos · Controles |
 | **[08](aula8/)** | HTML Semântico Moderno | Semântica | Header · Nav · Main · Article · Section · Footer · SEO |

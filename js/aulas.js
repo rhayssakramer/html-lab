@@ -95,7 +95,7 @@ const aulas = [
 // Função para gerar um card de aula
 function gerarCardAula(aula) {
     const tagsHTML = aula.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-    const emBreve = Number(aula.numero) >= 5 && Number(aula.numero) <= 9;
+    const emBreve = Number(aula.numero) >= 6 && Number(aula.numero) <= 9;
     const descricaoHTML = aula.descricao
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
