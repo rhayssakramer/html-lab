@@ -1,0 +1,1557 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5 - Criando Formulários | HTML Lab</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../"><img src="../img/logo.png" alt="Logo" class="logo-icon"></a>
+                <h1>HTMLAB</h1>
+            </div>
+            <nav class="nav">
+                <a href="../#como-funciona">Sobre</a>
+                <div class="nav-dropdown">
+                    <a href="../#aulas" aria-controls="topicos-aula">Aulas</a>
+                    <ul class="nav-topicos" id="topicos-aula" aria-label="Tópicos da aula 5">
+                        <li><a href="#o-que-sao-formularios">1. O que são Formulários</a></li>
+                        <li><a href="#tag-form">2. A Tag form</a></li>
+                        <li><a href="#get-post">3. GET, POST e enctype</a></li>
+                        <li><a href="#name-value">4. name e value</a></li>
+                        <li><a href="#inputs-texto">5. Inputs de Texto</a></li>
+                        <li><a href="#inputs-data">6. Datas e Horas</a></li>
+                        <li><a href="#inputs-especiais">7. Inputs Especiais</a></li>
+                        <li><a href="#checkbox-radio">8. Checkbox e Radio</a></li>
+                        <li><a href="#botoes">9. Botões</a></li>
+                        <li><a href="#textarea">10. Textarea</a></li>
+                        <li><a href="#select">11. Select e Datalist</a></li>
+                        <li><a href="#label-fieldset">12. Label, Fieldset e Legend</a></li>
+                        <li><a href="#atributos">13. Atributos dos Campos</a></li>
+                        <li><a href="#autocomplete">14. Autocomplete</a></li>
+                        <li><a href="#validacao">15. Validação Nativa</a></li>
+                        <li><a href="#pseudo-classes">16. Pseudo-classes CSS</a></li>
+                        <li><a href="#constraint-api">17. Constraint Validation API</a></li>
+                        <li><a href="#output-progress-meter">18. Output, Progress e Meter</a></li>
+                        <li><a href="#javascript">19. Formulários com JavaScript</a></li>
+                        <li><a href="#hacks">20. Hacks e Truques</a></li>
+                        <li><a href="#seguranca">21. Segurança</a></li>
+                        <li><a href="#acessibilidade">22. Acessibilidade</a></li>
+                        <li><a href="#boas-praticas">23. Boas Práticas de UX</a></li>
+                        <li><a href="#form-completo">24. Formulário Completo</a></li>
+                        <li><a href="#desafio">25. Desafio</a></li>
+                    </ul>
+                </div>
+                <a href="../#recursos">Recursos</a>
+                <a href="https://github.com/rhayssakramer/tudo-sobre-html" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="aula-container">
+        <section class="aula-header-hero">
+            <div class="hero-content">
+                <h1>Criando <span class="highlight">Formulários</span></h1>
+                <p class="hero-text">Do básico ao avançado: form, input, textarea, select, validação nativa, Constraint Validation API, autocomplete, acessibilidade, segurança e os hacks que quase ninguém conhece.</p>
+                <button id="btn-hero" class="btn btn-primary">Bora começar 🚀</button>
+            </div>
+            <div class="hero-illustration">
+                <img src="../img/html-3d.webp" alt="HTML 3D" class="hero-image">
+            </div>
+        </section>
+
+        <section class="toc-section" id="toc-section">
+            <h2>📚 Índice de Conteúdos</h2>
+            <nav class="toc-list">
+                <a href="#o-que-sao-formularios">1. O que são Formulários</a>
+                <a href="#tag-form">2. A Tag &lt;form&gt;</a>
+                <a href="#get-post">3. GET, POST e enctype</a>
+                <a href="#name-value">4. name e value</a>
+                <a href="#inputs-texto">5. Inputs de Texto</a>
+                <a href="#inputs-data">6. Datas e Horas</a>
+                <a href="#inputs-especiais">7. Inputs Especiais</a>
+                <a href="#checkbox-radio">8. Checkbox e Radio</a>
+                <a href="#botoes">9. Botões</a>
+                <a href="#textarea">10. Textarea</a>
+                <a href="#select">11. Select e Datalist</a>
+                <a href="#label-fieldset">12. Label, Fieldset e Legend</a>
+                <a href="#atributos">13. Atributos dos Campos</a>
+                <a href="#autocomplete">14. Autocomplete</a>
+                <a href="#validacao">15. Validação Nativa</a>
+                <a href="#pseudo-classes">16. Pseudo-classes CSS</a>
+                <a href="#constraint-api">17. Constraint Validation API</a>
+                <a href="#output-progress-meter">18. Output, Progress e Meter</a>
+                <a href="#javascript">19. Formulários com JavaScript</a>
+                <a href="#hacks">20. Hacks e Truques</a>
+                <a href="#seguranca">21. Segurança</a>
+                <a href="#acessibilidade">22. Acessibilidade</a>
+                <a href="#boas-praticas">23. Boas Práticas de UX</a>
+                <a href="#form-completo">24. Formulário Completo</a>
+                <a href="#desafio">25. Desafio</a>
+            </nav>
+        </section>
+
+        <!-- SEÇÃO 1 -->
+        <section class="content-section" id="o-que-sao-formularios">
+            <span class="section-label">01 · O QUE SÃO FORMULÁRIOS</span>
+            <h1>A ponte entre o <span class="highlight">usuário</span> e o servidor</h1>
+            <div class="content-block">
+                <p>Formulários são a principal forma de um usuário <strong>enviar dados</strong> para um site. Toda vez que você faz login, pesquisa no Google, compra algo ou comenta em um post, está usando um formulário HTML.</p>
+                <h3>Onde os formulários aparecem?</h3>
+                <ul>
+                    <li><strong>Autenticação</strong>: login, cadastro, recuperação de senha</li>
+                    <li><strong>Busca</strong>: barras de pesquisa e filtros</li>
+                    <li><strong>Comércio</strong>: carrinho, checkout e pagamento</li>
+                    <li><strong>Contato</strong>: fale conosco, feedback, suporte</li>
+                    <li><strong>Configurações</strong>: perfil, preferências, upload de avatar</li>
+                </ul>
+                <h3>Como funciona o fluxo?</h3>
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>1. Usuário preenche</h4>
+                        <p>Os campos (<code>input</code>, <code>select</code>, <code>textarea</code>) recebem os dados digitados.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>2. Navegador valida</h4>
+                        <p>Antes de enviar, o navegador checa regras como <code>required</code>, <code>type="email"</code> e <code>pattern</code>.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>3. Dados são enviados</h4>
+                        <p>O navegador monta pares <code>nome=valor</code> e faz uma requisição HTTP para a URL do <code>action</code>.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>4. Servidor responde</h4>
+                        <p>O back-end processa, valida de novo, salva e devolve uma nova página ou um redirecionamento.</p>
+                    </div>
+                </div>
+                <div class="info-box info">
+                    <strong>💡 Dica:</strong> Lembra da Aula 1 (Client x Server)? Formulários são exatamente a parte <em>Request</em> dessa conversa!
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2 -->
+        <section class="content-section" id="tag-form">
+            <span class="section-label">02 · A TAG &lt;form&gt;</span>
+            <h1>O container de <span class="highlight">todos os campos</span></h1>
+            <div class="content-block">
+                <p>A tag <code>&lt;form&gt;</code> agrupa os campos e define <strong>para onde</strong> e <strong>como</strong> os dados serão enviados.</p>
+                <pre><code class="code-block">&lt;form action="/cadastro" method="post"&gt;
+    &lt;label for="nome"&gt;Nome&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome"&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <h3>Todos os atributos do &lt;form&gt;</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Para que serve</th><th>Valores</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>action</code></td><td>URL que recebe os dados</td><td>URL (padrão: a própria página)</td></tr>
+                        <tr><td><code>method</code></td><td>Método HTTP de envio</td><td><code>get</code> (padrão), <code>post</code>, <code>dialog</code></td></tr>
+                        <tr><td><code>enctype</code></td><td>Formato dos dados no POST</td><td><code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code>, <code>text/plain</code></td></tr>
+                        <tr><td><code>target</code></td><td>Onde abrir a resposta</td><td><code>_self</code>, <code>_blank</code>, <code>_parent</code>, <code>_top</code>, nome de iframe</td></tr>
+                        <tr><td><code>autocomplete</code></td><td>Liga/desliga o preenchimento automático</td><td><code>on</code>, <code>off</code></td></tr>
+                        <tr><td><code>novalidate</code></td><td>Desativa a validação nativa</td><td>booleano</td></tr>
+                        <tr><td><code>name</code></td><td>Nome do formulário (acessível via <code>document.forms</code>)</td><td>texto</td></tr>
+                        <tr><td><code>accept-charset</code></td><td>Codificação de caracteres</td><td><code>UTF-8</code></td></tr>
+                        <tr><td><code>rel</code></td><td>Relação com o destino</td><td><code>noopener</code>, <code>noreferrer</code>, <code>external</code></td></tr>
+                    </tbody>
+                </table>
+                <div class="info-box warning">
+                    <strong>⚠️ Importante:</strong> Não é permitido colocar um <code>&lt;form&gt;</code> dentro de outro <code>&lt;form&gt;</code>. Se precisar de campos "fora" do form, use o atributo <code>form</code> (veja a seção de Hacks!).
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3 -->
+        <section class="content-section" id="get-post">
+            <span class="section-label">03 · GET, POST E ENCTYPE</span>
+            <h1>Como os dados <span class="highlight">viajam</span></h1>
+            <div class="content-block">
+                <p>O atributo <code>method</code> decide se os dados vão na <strong>URL</strong> (GET) ou no <strong>corpo da requisição</strong> (POST).</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>📬 GET</h4>
+                        <pre><code class="code-block">&lt;form action="/buscar" method="get"&gt;
+    &lt;input name="q" value="html"&gt;
+&lt;/form&gt;
+
+&lt;!-- Resultado: --&gt;
+/buscar?q=html</code></pre>
+                        <ul>
+                            <li>Dados ficam visíveis na URL</li>
+                            <li>Pode ser salvo nos favoritos e compartilhado</li>
+                            <li>Ideal para buscas e filtros</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>📦 POST</h4>
+                        <pre><code class="code-block">&lt;form action="/login" method="post"&gt;
+    &lt;input name="user" value="ana"&gt;
+&lt;/form&gt;
+
+&lt;!-- Corpo da requisição: --&gt;
+user=ana</code></pre>
+                        <ul>
+                            <li>Dados vão no corpo (não aparecem na URL)</li>
+                            <li>Sem limite prático de tamanho</li>
+                            <li>Ideal para login, cadastro e uploads</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Os 3 tipos de enctype</h3>
+                <table class="content-table">
+                    <thead><tr><th>enctype</th><th>Como os dados ficam</th><th>Quando usar</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>application/x-www-form-urlencoded</code></td><td><code>nome=Ana+Silva&amp;idade=25</code></td><td>Padrão. Formulários comuns</td></tr>
+                        <tr><td><code>multipart/form-data</code></td><td>Dados divididos em "partes" com boundary</td><td><strong>Obrigatório</strong> para upload de arquivos</td></tr>
+                        <tr><td><code>text/plain</code></td><td><code>nome=Ana Silva</code></td><td>Apenas para debug (evite)</td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">&lt;!-- Upload de arquivo SEMPRE precisa disso: --&gt;
+&lt;form action="/upload" method="post" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="avatar"&gt;
+    &lt;button&gt;Enviar foto&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <div class="info-box warning">
+                    <strong>⚠️ Cuidado:</strong> Nunca use GET para senhas ou dados pessoais — eles ficam no histórico do navegador, nos logs do servidor e podem vazar pelo cabeçalho <code>Referer</code>.
+                </div>
+                <div class="info-box tip">
+                    <strong>✨ Curiosidade:</strong> HTML puro só suporta <code>get</code>, <code>post</code> e <code>dialog</code>. Métodos como PUT e DELETE só são possíveis via JavaScript (<code>fetch</code>).
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4 -->
+        <section class="content-section" id="name-value">
+            <span class="section-label">04 · NAME E VALUE</span>
+            <h1>Sem <span class="highlight">name</span>, sem dados</h1>
+            <div class="content-block">
+                <p>O atributo <code>name</code> é a <strong>chave</strong> e o <code>value</code> é o <strong>valor</strong> que chegam ao servidor. Um campo sem <code>name</code> simplesmente <strong>não é enviado</strong>.</p>
+                <pre><code class="code-block">&lt;input type="text" name="cidade" value="Recife"&gt;   &lt;!-- enviado: cidade=Recife --&gt;
+&lt;input type="text" value="Olinda"&gt;                 &lt;!-- NÃO é enviado (sem name) --&gt;</code></pre>
+                <h3>Regras que pegam muita gente</h3>
+                <table class="content-table">
+                    <thead><tr><th>Situação</th><th>É enviado?</th></tr></thead>
+                    <tbody>
+                        <tr><td>Campo sem <code>name</code></td><td>❌ Não</td></tr>
+                        <tr><td>Campo com <code>disabled</code></td><td>❌ Não</td></tr>
+                        <tr><td>Campo com <code>readonly</code></td><td>✅ Sim</td></tr>
+                        <tr><td>Checkbox/radio <strong>não</strong> marcado</td><td>❌ Não</td></tr>
+                        <tr><td>Checkbox marcado sem <code>value</code></td><td>✅ Sim, com valor <code>on</code></td></tr>
+                        <tr><td><code>type="hidden"</code></td><td>✅ Sim</td></tr>
+                        <tr><td>Botão de submit clicado (com <code>name</code>)</td><td>✅ Sim, apenas o botão clicado</td></tr>
+                    </tbody>
+                </table>
+                <h3>Vários valores com o mesmo name</h3>
+                <pre><code class="code-block">&lt;input type="checkbox" name="hobby" value="ler" checked&gt;
+&lt;input type="checkbox" name="hobby" value="correr" checked&gt;
+
+&lt;!-- Enviado: hobby=ler&amp;hobby=correr --&gt;
+&lt;!-- Em PHP use name="hobby[]" para receber como array --&gt;</code></pre>
+                <div class="info-box info">
+                    <strong>💡 Dica:</strong> <code>id</code> serve para o HTML/CSS/JS e para o <code>&lt;label&gt;</code>. <code>name</code> serve para o envio. Normalmente os dois existem e podem ter o mesmo valor.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 5 -->
+        <section class="content-section" id="inputs-texto">
+            <span class="section-label">05 · INPUTS DE TEXTO</span>
+            <h1>Um <span class="highlight">type</span> para cada tipo de dado</h1>
+            <div class="content-block">
+                <p>A tag <code>&lt;input&gt;</code> é <strong>void</strong> (não tem fechamento) e muda completamente de comportamento conforme o atributo <code>type</code>. Escolher o tipo certo dá validação grátis e abre o <strong>teclado certo no celular</strong>.</p>
+                <table class="content-table">
+                    <thead><tr><th>type</th><th>Uso</th><th>Bônus do navegador</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>text</code></td><td>Texto livre (padrão)</td><td>—</td></tr>
+                        <tr><td><code>password</code></td><td>Senhas</td><td>Oculta caracteres, gerenciador de senhas</td></tr>
+                        <tr><td><code>email</code></td><td>E-mail</td><td>Valida formato, teclado com <code>@</code></td></tr>
+                        <tr><td><code>tel</code></td><td>Telefone</td><td>Teclado numérico (não valida formato)</td></tr>
+                        <tr><td><code>url</code></td><td>Endereços web</td><td>Valida <code>https://...</code>, teclado com <code>.com</code></td></tr>
+                        <tr><td><code>search</code></td><td>Busca</td><td>Botão "x" para limpar, tecla "Buscar"</td></tr>
+                        <tr><td><code>number</code></td><td>Quantidades</td><td>Setas +/-, valida <code>min</code>/<code>max</code>/<code>step</code></td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">&lt;input type="text"     name="nome"     placeholder="Seu nome"&gt;
+&lt;input type="password" name="senha"    minlength="8"&gt;
+&lt;input type="email"    name="email"    placeholder="voce@email.com"&gt;
+&lt;input type="tel"      name="telefone" placeholder="(81) 99999-9999"&gt;
+&lt;input type="url"      name="site"     placeholder="https://"&gt;
+&lt;input type="search"   name="q"        placeholder="Buscar..."&gt;
+&lt;input type="number"   name="qtd"      min="1" max="10" step="1"&gt;</code></pre>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="d-nome">Nome</label>
+                        <input type="text" id="d-nome" name="nome" placeholder="Seu nome">
+                        <label for="d-senha">Senha</label>
+                        <input type="password" id="d-senha" name="senha" minlength="8" placeholder="mínimo 8 caracteres">
+                        <label for="d-email">E-mail</label>
+                        <input type="email" id="d-email" name="email" placeholder="voce@email.com">
+                        <label for="d-tel">Telefone</label>
+                        <input type="tel" id="d-tel" name="telefone" placeholder="(81) 99999-9999">
+                        <label for="d-url">Site</label>
+                        <input type="url" id="d-url" name="site" placeholder="https://">
+                        <label for="d-search">Busca</label>
+                        <input type="search" id="d-search" name="q" placeholder="Buscar...">
+                        <label for="d-qtd">Quantidade</label>
+                        <input type="number" id="d-qtd" name="qtd" min="1" max="10" value="1">
+                    </form>
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Pegadinha:</strong> <strong>Não</strong> use <code>type="number"</code> para CPF, CEP, cartão ou telefone! Ele remove zeros à esquerda, aceita <code>e</code> (notação científica) e muda o valor com a rodinha do mouse. Use <code>type="text"</code> + <code>inputmode="numeric"</code>.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 6 -->
+        <section class="content-section" id="inputs-data">
+            <span class="section-label">06 · DATAS E HORAS</span>
+            <h1>Calendários <span class="highlight">nativos</span>, sem biblioteca</h1>
+            <div class="content-block">
+                <p>Os tipos de data abrem um seletor nativo do sistema. O valor enviado é sempre no formato <strong>ISO</strong>, independente de como aparece na tela.</p>
+                <table class="content-table">
+                    <thead><tr><th>type</th><th>Valor enviado</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>date</code></td><td><code>2026-11-28</code></td></tr>
+                        <tr><td><code>time</code></td><td><code>14:30</code></td></tr>
+                        <tr><td><code>datetime-local</code></td><td><code>2026-11-28T14:30</code></td></tr>
+                        <tr><td><code>month</code></td><td><code>2026-11</code></td></tr>
+                        <tr><td><code>week</code></td><td><code>2026-W48</code></td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">&lt;!-- Só permite datas a partir de hoje até o fim de 2027 --&gt;
+&lt;input type="date" name="reserva" min="2026-11-28" max="2027-12-31"&gt;
+
+&lt;!-- Horário comercial, de 30 em 30 minutos (step em segundos) --&gt;
+&lt;input type="time" name="hora" min="08:00" max="18:00" step="1800"&gt;</code></pre>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="d-date">Data</label>
+                        <input type="date" id="d-date" name="data">
+                        <label for="d-time">Hora</label>
+                        <input type="time" id="d-time" name="hora" step="1800">
+                        <label for="d-dtl">Data e hora</label>
+                        <input type="datetime-local" id="d-dtl" name="quando">
+                        <label for="d-month">Mês</label>
+                        <input type="month" id="d-month" name="mes">
+                        <label for="d-week">Semana</label>
+                        <input type="week" id="d-week" name="semana">
+                    </form>
+                </div>
+                <div class="info-box tip">
+                    <strong>✨ Hack:</strong> Em JavaScript, <code>input.valueAsDate</code> retorna um objeto <code>Date</code> e <code>input.valueAsNumber</code> retorna o timestamp — sem precisar fazer parse de string!
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 7 -->
+        <section class="content-section" id="inputs-especiais">
+            <span class="section-label">07 · INPUTS ESPECIAIS</span>
+            <h1>Cores, sliders, arquivos e campos <span class="highlight">invisíveis</span></h1>
+            <div class="content-block">
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>type="color"</h4>
+                        <p>Abre o seletor de cores. Valor sempre em hexadecimal minúsculo (<code>#ff6b35</code>).</p>
+                        <pre><code class="code-block">&lt;input type="color" name="cor" value="#ff6b35"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>type="range"</h4>
+                        <p>Slider numérico. Padrão: <code>min=0</code>, <code>max=100</code>, <code>step=1</code>.</p>
+                        <pre><code class="code-block">&lt;input type="range" name="volume" min="0" max="10" value="5"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>type="file"</h4>
+                        <p>Upload de arquivos. Exige <code>method="post"</code> e <code>enctype="multipart/form-data"</code>.</p>
+                        <pre><code class="code-block">&lt;input type="file" name="docs" accept=".pdf,image/*" multiple&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>type="hidden"</h4>
+                        <p>Envia dados que o usuário não vê (ID do produto, token CSRF). <strong>Não é segredo</strong>: aparece no código-fonte!</p>
+                        <pre><code class="code-block">&lt;input type="hidden" name="produto_id" value="42"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>type="image"</h4>
+                        <p>Botão de envio em forma de imagem. Envia também as coordenadas do clique (<code>x</code> e <code>y</code>).</p>
+                        <pre><code class="code-block">&lt;input type="image" src="enviar.png" alt="Enviar"&gt;</code></pre>
+                    </div>
+                </div>
+                <h3>Atributos exclusivos do type="file"</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Exemplo</th><th>Efeito</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>accept</code></td><td><code>image/*</code>, <code>.pdf,.docx</code>, <code>video/mp4</code></td><td>Filtra os tipos no seletor</td></tr>
+                        <tr><td><code>multiple</code></td><td>—</td><td>Permite selecionar vários arquivos</td></tr>
+                        <tr><td><code>capture</code></td><td><code>user</code> (frontal), <code>environment</code> (traseira)</td><td>Abre a câmera direto no celular</td></tr>
+                        <tr><td><code>webkitdirectory</code></td><td>—</td><td>Permite selecionar uma pasta inteira</td></tr>
+                    </tbody>
+                </table>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="d-color">Cor favorita</label>
+                        <input type="color" id="d-color" name="cor" value="#ff6b35">
+                        <label for="d-range">Volume: <output id="d-range-out" for="d-range">5</output></label>
+                        <input type="range" id="d-range" name="volume" min="0" max="10" value="5">
+                        <label for="d-file">Arquivos (PDF ou imagem)</label>
+                        <input type="file" id="d-file" name="docs" accept=".pdf,image/*" multiple>
+                    </form>
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Segurança:</strong> <code>accept</code> é só uma sugestão para o seletor. O usuário pode escolher "Todos os arquivos". Sempre valide o tipo real e o tamanho <strong>no servidor</strong>.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 8 -->
+        <section class="content-section" id="checkbox-radio">
+            <span class="section-label">08 · CHECKBOX E RADIO</span>
+            <h1>Várias escolhas ou <span class="highlight">apenas uma</span></h1>
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>☑️ Checkbox — várias opções</h4>
+                        <pre><code class="code-block">&lt;label&gt;
+  &lt;input type="checkbox"
+         name="skill" value="html"
+         checked&gt;
+  HTML
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox"
+         name="skill" value="css"&gt;
+  CSS
+&lt;/label&gt;</code></pre>
+                    </div>
+                    <div class="column">
+                        <h4>🔘 Radio — só uma opção</h4>
+                        <pre><code class="code-block">&lt;label&gt;
+  &lt;input type="radio"
+         name="plano" value="free"
+         checked&gt;
+  Grátis
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="radio"
+         name="plano" value="pro"&gt;
+  Pro
+&lt;/label&gt;</code></pre>
+                    </div>
+                </div>
+                <p>O que agrupa os radios é o <strong>mesmo <code>name</code></strong>. Radios com nomes diferentes não se "desmarcam" entre si.</p>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <fieldset>
+                            <legend>Quais você conhece?</legend>
+                            <label class="inline"><input type="checkbox" name="skill" value="html" checked> HTML</label>
+                            <label class="inline"><input type="checkbox" name="skill" value="css"> CSS</label>
+                            <label class="inline"><input type="checkbox" name="skill" value="js"> JavaScript</label>
+                            <label class="inline"><input type="checkbox" id="d-indeterminate" name="todos"> Estado indeterminado (via JS)</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Escolha um plano</legend>
+                            <label class="inline"><input type="radio" name="plano" value="free" checked> Grátis</label>
+                            <label class="inline"><input type="radio" name="plano" value="pro"> Pro</label>
+                            <label class="inline"><input type="radio" name="plano" value="team"> Equipe</label>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="info-box tip">
+                    <strong>✨ Hack — checkbox indeterminado:</strong> o terceiro estado (traço "—") só existe via JavaScript: <code>checkbox.indeterminate = true</code>. Perfeito para um "selecionar todos" quando só alguns itens estão marcados.
+                </div>
+                <div class="info-box info">
+                    <strong>💡 Dica:</strong> Para um único checkbox obrigatório (ex.: "Aceito os termos"), use <code>required</code>. Para radios, basta colocar <code>required</code> em <strong>um</strong> deles do grupo.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 9 -->
+        <section class="content-section" id="botoes">
+            <span class="section-label">09 · BOTÕES</span>
+            <h1>Enviar, limpar ou <span class="highlight">só clicar</span></h1>
+            <div class="content-block">
+                <p>Prefira <code>&lt;button&gt;</code> a <code>&lt;input type="submit"&gt;</code>: ele aceita HTML dentro (ícones, <code>&lt;strong&gt;</code>, etc.).</p>
+                <table class="content-table">
+                    <thead><tr><th>type</th><th>Comportamento</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>submit</code></td><td>Envia o formulário (<strong>é o padrão!</strong>)</td></tr>
+                        <tr><td><code>reset</code></td><td>Volta todos os campos para o valor inicial</td></tr>
+                        <tr><td><code>button</code></td><td>Não faz nada sozinho — use com JavaScript</td></tr>
+                    </tbody>
+                </table>
+                <div class="info-box warning">
+                    <strong>⚠️ Bug clássico:</strong> um <code>&lt;button&gt;</code> sem <code>type</code> dentro de um form é <code>submit</code>. Aquele botão "Mostrar senha" vai enviar o formulário! Sempre declare <code>type="button"</code> em botões que não enviam.
+                </div>
+                <h3>Um formulário, vários destinos</h3>
+                <p>Os atributos <code>form*</code> no botão <strong>sobrescrevem</strong> os do <code>&lt;form&gt;</code> só para aquele clique:</p>
+                <pre><code class="code-block">&lt;form action="/artigo/salvar" method="post"&gt;
+    &lt;textarea name="conteudo"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Publicar&lt;/button&gt;
+    &lt;button type="submit" formaction="/artigo/rascunho" formnovalidate&gt;
+        Salvar rascunho
+    &lt;/button&gt;
+    &lt;button type="submit" formaction="/artigo/preview" formtarget="_blank"&gt;
+        Pré-visualizar
+    &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <table class="content-table">
+                    <thead><tr><th>Atributo no botão</th><th>Sobrescreve</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>formaction</code></td><td><code>action</code></td></tr>
+                        <tr><td><code>formmethod</code></td><td><code>method</code></td></tr>
+                        <tr><td><code>formenctype</code></td><td><code>enctype</code></td></tr>
+                        <tr><td><code>formtarget</code></td><td><code>target</code></td></tr>
+                        <tr><td><code>formnovalidate</code></td><td><code>novalidate</code></td></tr>
+                    </tbody>
+                </table>
+                <div class="info-box tip">
+                    <strong>✨ Hack:</strong> Pressionar <kbd>Enter</kbd> em um campo de texto aciona o <strong>primeiro</strong> botão de submit do form. Coloque a ação principal primeiro no HTML (dá para reordenar visualmente com CSS).
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 10 -->
+        <section class="content-section" id="textarea">
+            <span class="section-label">10 · TEXTAREA</span>
+            <h1>Textos <span class="highlight">longos</span> com várias linhas</h1>
+            <div class="content-block">
+                <p>Diferente do <code>&lt;input&gt;</code>, o <code>&lt;textarea&gt;</code> <strong>tem tag de fechamento</strong> e o valor inicial fica <strong>entre as tags</strong> (não existe atributo <code>value</code>).</p>
+                <pre><code class="code-block">&lt;label for="bio"&gt;Sobre você&lt;/label&gt;
+&lt;textarea id="bio" name="bio" rows="4" cols="40"
+          maxlength="280" placeholder="Conte um pouco..."&gt;&lt;/textarea&gt;</code></pre>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Efeito</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>rows</code> / <code>cols</code></td><td>Altura (linhas) e largura (caracteres) visíveis</td></tr>
+                        <tr><td><code>minlength</code> / <code>maxlength</code></td><td>Limites de caracteres</td></tr>
+                        <tr><td><code>wrap</code></td><td><code>soft</code> (padrão) ou <code>hard</code> (envia as quebras visuais; exige <code>cols</code>)</td></tr>
+                        <tr><td><code>spellcheck</code></td><td>Liga/desliga o corretor ortográfico</td></tr>
+                        <tr><td><code>dirname</code></td><td>Envia também a direção do texto (<code>ltr</code>/<code>rtl</code>)</td></tr>
+                    </tbody>
+                </table>
+                <div class="info-box warning">
+                    <strong>⚠️ Pegadinha:</strong> qualquer espaço ou quebra de linha entre <code>&lt;textarea&gt;</code> e <code>&lt;/textarea&gt;</code> vira conteúdo! Escreva as tags coladas quando quiser o campo vazio — senão o <code>placeholder</code> nem aparece.
+                </div>
+                <h3>Controlando o redimensionamento com CSS</h3>
+                <pre><code class="code-block">textarea {
+    resize: vertical;      /* none | both | horizontal | vertical */
+    field-sizing: content; /* 🆕 cresce sozinho conforme o texto! */
+    min-height: 4lh;       /* 4 alturas de linha */
+}</code></pre>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="d-bio">Sobre você <small>(<span id="d-bio-count">0</span>/280)</small></label>
+                        <textarea id="d-bio" name="bio" rows="3" maxlength="280" placeholder="Digite e veja o contador e o auto-crescimento..."></textarea>
+                    </form>
+                </div>
+                <div class="info-box tip">
+                    <strong>✨ Hack:</strong> <code>field-sizing: content</code> faz o textarea (e até inputs e selects) crescerem automaticamente com o conteúdo, sem uma linha de JavaScript. Funciona nos navegadores baseados em Chromium; nos outros, o campo apenas mantém o tamanho fixo.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 11 -->
+        <section class="content-section" id="select">
+            <span class="section-label">11 · SELECT, OPTION, OPTGROUP E DATALIST</span>
+            <h1>Listas de <span class="highlight">opções</span></h1>
+            <div class="content-block">
+                <h3>Select básico</h3>
+                <pre><code class="code-block">&lt;label for="estado"&gt;Estado&lt;/label&gt;
+&lt;select id="estado" name="estado" required&gt;
+    &lt;option value="" disabled selected&gt;Selecione...&lt;/option&gt;
+    &lt;option value="PE"&gt;Pernambuco&lt;/option&gt;
+    &lt;option value="SP"&gt;São Paulo&lt;/option&gt;
+    &lt;option value="RJ"&gt;Rio de Janeiro&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                <p>Truque do placeholder: a primeira <code>option</code> com <code>value=""</code> faz o <code>required</code> funcionar — o usuário é obrigado a escolher outra.</p>
+                <h3>Agrupando com optgroup</h3>
+                <pre><code class="code-block">&lt;select name="linguagem"&gt;
+    &lt;optgroup label="Front-end"&gt;
+        &lt;option&gt;HTML&lt;/option&gt;
+        &lt;option&gt;CSS&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label="Back-end" disabled&gt;
+        &lt;option&gt;Python&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+                <h3>Seleção múltipla</h3>
+                <pre><code class="code-block">&lt;!-- Ctrl/Cmd + clique para escolher vários. size = linhas visíveis --&gt;
+&lt;select name="frutas" multiple size="4"&gt; ... &lt;/select&gt;</code></pre>
+                <h3>Datalist: autocomplete com texto livre</h3>
+                <p>O <code>&lt;datalist&gt;</code> sugere opções, mas o usuário <strong>pode digitar qualquer coisa</strong>. É um "meio-termo" entre <code>input</code> e <code>select</code>.</p>
+                <pre><code class="code-block">&lt;input list="navegadores" name="navegador"&gt;
+&lt;datalist id="navegadores"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Safari"&gt;
+    &lt;option value="Edge"&gt;
+&lt;/datalist&gt;</code></pre>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="d-estado">Estado</label>
+                        <select id="d-estado" name="estado">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                        </select>
+                        <label for="d-ling">Linguagem</label>
+                        <select id="d-ling" name="linguagem">
+                            <optgroup label="Front-end">
+                                <option>HTML</option>
+                                <option>CSS</option>
+                                <option>JavaScript</option>
+                            </optgroup>
+                            <optgroup label="Back-end">
+                                <option>Python</option>
+                                <option>Node.js</option>
+                            </optgroup>
+                        </select>
+                        <label for="d-frutas">Frutas (múltipla)</label>
+                        <select id="d-frutas" name="frutas" multiple size="4">
+                            <option>Manga</option>
+                            <option>Caju</option>
+                            <option>Acerola</option>
+                            <option>Graviola</option>
+                        </select>
+                        <label for="d-nav">Navegador (datalist)</label>
+                        <input list="d-navegadores" id="d-nav" name="navegador" placeholder="Comece a digitar...">
+                        <datalist id="d-navegadores">
+                            <option value="Chrome"></option>
+                            <option value="Firefox"></option>
+                            <option value="Safari"></option>
+                            <option value="Edge"></option>
+                        </datalist>
+                    </form>
+                </div>
+                <div class="info-box tip">
+                    <strong>✨ Hack:</strong> <code>&lt;datalist&gt;</code> funciona também com <code>type="range"</code> (mostra marcações no slider), <code>type="color"</code> (paleta sugerida) e <code>type="date"</code>.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 12 -->
+        <section class="content-section" id="label-fieldset">
+            <span class="section-label">12 · LABEL, FIELDSET E LEGEND</span>
+            <h1>Dando <span class="highlight">nome</span> e estrutura aos campos</h1>
+            <div class="content-block">
+                <p>Todo campo precisa de um <code>&lt;label&gt;</code>. Ele é lido pelos leitores de tela e <strong>aumenta a área de clique</strong>: clicar no texto foca o campo (ou marca o checkbox).</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>Forma 1: explícita (for + id)</h4>
+                        <pre><code class="code-block">&lt;label for="email"&gt;E-mail&lt;/label&gt;
+&lt;input type="email" id="email"
+       name="email"&gt;</code></pre>
+                        <p>Mais flexível para layout. O <code>for</code> deve ser <strong>igual</strong> ao <code>id</code>.</p>
+                    </div>
+                    <div class="column">
+                        <h4>Forma 2: implícita (aninhada)</h4>
+                        <pre><code class="code-block">&lt;label&gt;
+    &lt;input type="checkbox" name="news"&gt;
+    Quero receber novidades
+&lt;/label&gt;</code></pre>
+                        <p>Ótima para checkbox e radio. Não precisa de <code>id</code>.</p>
+                    </div>
+                </div>
+                <h3>Fieldset e Legend: agrupando campos relacionados</h3>
+                <pre><code class="code-block">&lt;fieldset&gt;
+    &lt;legend&gt;Endereço de entrega&lt;/legend&gt;
+    &lt;label for="cep"&gt;CEP&lt;/label&gt;
+    &lt;input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code"&gt;
+    &lt;label for="rua"&gt;Rua&lt;/label&gt;
+    &lt;input id="rua" name="rua" autocomplete="address-line1"&gt;
+&lt;/fieldset&gt;</code></pre>
+                <p>O leitor de tela anuncia a <code>legend</code> ao entrar no grupo: <em>"Endereço de entrega, grupo. CEP, editar texto"</em>. Para grupos de radio, <code>fieldset</code> + <code>legend</code> é <strong>essencial</strong>: é a "pergunta" das opções.</p>
+                <div class="info-box tip">
+                    <strong>✨ Hack:</strong> <code>&lt;fieldset disabled&gt;</code> desabilita <strong>todos</strong> os campos dentro dele de uma vez. Ótimo para travar o formulário enquanto envia!
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Nunca:</strong> use o <code>placeholder</code> como substituto do <code>label</code>. Ele some ao digitar, tem contraste baixo e muitos leitores de tela o ignoram.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 13 -->
+        <section class="content-section" id="atributos">
+            <span class="section-label">13 · ATRIBUTOS DOS CAMPOS</span>
+            <h1>O guia <span class="highlight">completo</span> de atributos</h1>
+            <div class="content-block">
+                <h3>Atributos gerais</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>name</code></td><td>Chave enviada ao servidor</td></tr>
+                        <tr><td><code>value</code></td><td>Valor inicial / valor enviado</td></tr>
+                        <tr><td><code>placeholder</code></td><td>Texto de exemplo (não é label!)</td></tr>
+                        <tr><td><code>required</code></td><td>Campo obrigatório</td></tr>
+                        <tr><td><code>disabled</code></td><td>Não editável, não focável e <strong>não enviado</strong></td></tr>
+                        <tr><td><code>readonly</code></td><td>Não editável, mas focável e <strong>enviado</strong></td></tr>
+                        <tr><td><code>autofocus</code></td><td>Recebe foco ao carregar a página (use com moderação)</td></tr>
+                        <tr><td><code>form</code></td><td>Associa o campo a um form pelo <code>id</code>, mesmo estando fora dele</td></tr>
+                        <tr><td><code>tabindex</code></td><td>Ordem de navegação pelo Tab (evite valores positivos)</td></tr>
+                    </tbody>
+                </table>
+                <h3>Atributos de validação</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Funciona em</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>minlength</code> / <code>maxlength</code></td><td>text, email, password, tel, url, search, textarea</td></tr>
+                        <tr><td><code>min</code> / <code>max</code></td><td>number, range, date, time, month, week, datetime-local</td></tr>
+                        <tr><td><code>step</code></td><td>number, range, datas (<code>step="any"</code> libera decimais)</td></tr>
+                        <tr><td><code>pattern</code></td><td>text, tel, email, url, password, search</td></tr>
+                        <tr><td><code>multiple</code></td><td>email (vários separados por vírgula), file, select</td></tr>
+                    </tbody>
+                </table>
+                <h3>Atributos de experiência (mobile!)</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Valores</th><th>Efeito</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>inputmode</code></td><td><code>numeric</code>, <code>decimal</code>, <code>tel</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>none</code></td><td>Escolhe o teclado virtual sem mudar a validação</td></tr>
+                        <tr><td><code>enterkeyhint</code></td><td><code>enter</code>, <code>done</code>, <code>go</code>, <code>next</code>, <code>previous</code>, <code>search</code>, <code>send</code></td><td>Muda o texto/ícone da tecla Enter do teclado</td></tr>
+                        <tr><td><code>autocapitalize</code></td><td><code>off</code>, <code>sentences</code>, <code>words</code>, <code>characters</code></td><td>Controla letras maiúsculas automáticas</td></tr>
+                        <tr><td><code>spellcheck</code></td><td><code>true</code>, <code>false</code></td><td>Corretor ortográfico (desligue em usuário/código)</td></tr>
+                        <tr><td><code>autocorrect</code></td><td><code>on</code>, <code>off</code></td><td>Autocorreção (Safari)</td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">&lt;!-- CPF perfeito: teclado numérico, máscara validada, sem number --&gt;
+&lt;input type="text" name="cpf" inputmode="numeric"
+       pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+       maxlength="14" placeholder="000.000.000-00"&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 14 -->
+        <section class="content-section" id="autocomplete">
+            <span class="section-label">14 · AUTOCOMPLETE</span>
+            <h1>Deixe o navegador <span class="highlight">preencher</span> por você</h1>
+            <div class="content-block">
+                <p>O atributo <code>autocomplete</code> aceita <strong>tokens padronizados</strong> que dizem ao navegador e aos gerenciadores de senha exatamente o que cada campo é. Formulários de checkout ficam com um clique!</p>
+                <table class="content-table">
+                    <thead><tr><th>Categoria</th><th>Tokens</th></tr></thead>
+                    <tbody>
+                        <tr><td>Nome</td><td><code>name</code>, <code>given-name</code>, <code>family-name</code>, <code>nickname</code></td></tr>
+                        <tr><td>Contato</td><td><code>email</code>, <code>tel</code>, <code>tel-national</code></td></tr>
+                        <tr><td>Login</td><td><code>username</code>, <code>current-password</code>, <code>new-password</code>, <code>one-time-code</code></td></tr>
+                        <tr><td>Endereço</td><td><code>street-address</code>, <code>address-line1</code>, <code>address-level2</code> (cidade), <code>address-level1</code> (estado), <code>postal-code</code>, <code>country</code></td></tr>
+                        <tr><td>Cartão</td><td><code>cc-name</code>, <code>cc-number</code>, <code>cc-exp</code>, <code>cc-csc</code></td></tr>
+                        <tr><td>Outros</td><td><code>bday</code>, <code>organization</code>, <code>url</code>, <code>sex</code>, <code>language</code></td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">&lt;!-- Login --&gt;
+&lt;input type="email"    name="email" autocomplete="username"&gt;
+&lt;input type="password" name="senha" autocomplete="current-password"&gt;
+
+&lt;!-- Cadastro: o gerenciador sugere uma senha forte --&gt;
+&lt;input type="password" name="nova" autocomplete="new-password"&gt;
+
+&lt;!-- Código SMS: o celular sugere o código recebido --&gt;
+&lt;input type="text" name="otp" inputmode="numeric" autocomplete="one-time-code"&gt;
+
+&lt;!-- Seções diferentes no mesmo form --&gt;
+&lt;input name="cep_entrega"  autocomplete="shipping postal-code"&gt;
+&lt;input name="cep_cobranca" autocomplete="billing postal-code"&gt;</code></pre>
+                <div class="info-box warning">
+                    <strong>⚠️ Mito:</strong> <code>autocomplete="off"</code> em campos de senha é ignorado pela maioria dos navegadores (de propósito: gerenciadores de senha aumentam a segurança). Use <code>new-password</code> se não quiser o preenchimento da senha salva.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 15 -->
+        <section class="content-section" id="validacao">
+            <span class="section-label">15 · VALIDAÇÃO NATIVA</span>
+            <h1>Validação <span class="highlight">sem JavaScript</span></h1>
+            <div class="content-block">
+                <p>O navegador bloqueia o envio e mostra uma mensagem quando alguma regra é violada. Tudo só com atributos!</p>
+                <pre><code class="code-block">&lt;!-- Obrigatório --&gt;
+&lt;input name="nome" required&gt;
+
+&lt;!-- Formato de e-mail --&gt;
+&lt;input type="email" name="email" required&gt;
+
+&lt;!-- Entre 3 e 20 caracteres --&gt;
+&lt;input name="usuario" minlength="3" maxlength="20"&gt;
+
+&lt;!-- Idade de 18 a 120 --&gt;
+&lt;input type="number" name="idade" min="18" max="120"&gt;
+
+&lt;!-- Preço com centavos (sem step, só aceita inteiros!) --&gt;
+&lt;input type="number" name="preco" min="0" step="0.01"&gt;
+
+&lt;!-- CEP: 5 dígitos, hífen opcional, 3 dígitos --&gt;
+&lt;input name="cep" pattern="\d{5}-?\d{3}" title="Formato: 00000-000"&gt;</code></pre>
+                <h3>Regras do pattern</h3>
+                <ul>
+                    <li>É uma <strong>expressão regular</strong> do JavaScript</li>
+                    <li>Já é ancorada: <code>pattern="\d{3}"</code> equivale a <code>^\d{3}$</code></li>
+                    <li>Campo vazio <strong>passa</strong> no pattern — combine com <code>required</code></li>
+                    <li>O <code>title</code> aparece junto da mensagem de erro (dica do formato)</li>
+                </ul>
+                <h3>Padrões úteis</h3>
+                <table class="content-table">
+                    <thead><tr><th>Dado</th><th>pattern</th></tr></thead>
+                    <tbody>
+                        <tr><td>CEP</td><td><code>\d{5}-?\d{3}</code></td></tr>
+                        <tr><td>CPF</td><td><code>\d{3}\.?\d{3}\.?\d{3}-?\d{2}</code></td></tr>
+                        <tr><td>Celular BR</td><td><code>\(?\d{2}\)?\s?9\d{4}-?\d{4}</code></td></tr>
+                        <tr><td>Placa Mercosul</td><td><code>[A-Za-z]{3}\d[A-Za-z]\d{2}</code></td></tr>
+                        <tr><td>Senha forte</td><td><code>(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}</code></td></tr>
+                        <tr><td>Apenas letras</td><td><code>[A-Za-zÀ-ÿ\s]+</code></td></tr>
+                    </tbody>
+                </table>
+                <h3>👀 Resultado Visual: tente enviar vazio ou com dados errados</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="v-nome">Nome *</label>
+                        <input id="v-nome" name="nome" required minlength="3">
+                        <label for="v-email">E-mail *</label>
+                        <input type="email" id="v-email" name="email" required>
+                        <label for="v-cep">CEP *</label>
+                        <input id="v-cep" name="cep" required pattern="\d{5}-?\d{3}" title="Formato: 00000-000" inputmode="numeric" placeholder="00000-000">
+                        <label for="v-idade">Idade (18 a 120)</label>
+                        <input type="number" id="v-idade" name="idade" min="18" max="120">
+                        <button type="submit" class="demo-btn">Validar</button>
+                        <output class="demo-output" aria-live="polite"></output>
+                    </form>
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Regra de ouro:</strong> validação no navegador é para <strong>UX</strong>, não segurança. Qualquer pessoa pode remover o <code>required</code> no DevTools ou enviar dados direto para a API. <strong>Sempre valide no servidor.</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 16 -->
+        <section class="content-section" id="pseudo-classes">
+            <span class="section-label">16 · PSEUDO-CLASSES CSS PARA FORMULÁRIOS</span>
+            <h1>Estilizando cada <span class="highlight">estado</span></h1>
+            <div class="content-block">
+                <p>O CSS sabe o estado de cada campo. Dá para criar feedback visual completo sem JavaScript.</p>
+                <table class="content-table">
+                    <thead><tr><th>Pseudo-classe</th><th>Seleciona campos...</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>:focus</code> / <code>:focus-visible</code></td><td>Em foco / em foco via teclado</td></tr>
+                        <tr><td><code>:focus-within</code></td><td>Elemento pai que contém um campo em foco</td></tr>
+                        <tr><td><code>:valid</code> / <code>:invalid</code></td><td>Que passam / não passam na validação</td></tr>
+                        <tr><td><code>:user-valid</code> / <code>:user-invalid</code></td><td>🆕 Válidos/inválidos <strong>só depois</strong> que o usuário interagiu</td></tr>
+                        <tr><td><code>:required</code> / <code>:optional</code></td><td>Com / sem <code>required</code></td></tr>
+                        <tr><td><code>:in-range</code> / <code>:out-of-range</code></td><td>Dentro / fora de <code>min</code> e <code>max</code></td></tr>
+                        <tr><td><code>:placeholder-shown</code></td><td>Que estão mostrando o placeholder (vazios)</td></tr>
+                        <tr><td><code>:checked</code></td><td>Checkbox, radio ou option selecionados</td></tr>
+                        <tr><td><code>:indeterminate</code></td><td>Checkbox indeterminado ou radio de grupo sem seleção</td></tr>
+                        <tr><td><code>:disabled</code> / <code>:enabled</code></td><td>Desabilitados / habilitados</td></tr>
+                        <tr><td><code>:read-only</code> / <code>:read-write</code></td><td>Somente leitura / editáveis</td></tr>
+                        <tr><td><code>:default</code></td><td>Botão submit padrão ou opção marcada inicialmente</td></tr>
+                        <tr><td><code>:autofill</code></td><td>Preenchidos automaticamente pelo navegador</td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">/* Só fica vermelho DEPOIS que o usuário mexeu (não ao abrir a página) */
+input:user-invalid { border-color: crimson; }
+input:user-valid   { border-color: seagreen; }
+
+/* Asterisco automático nos labels de campos obrigatórios */
+label:has(+ input:required)::after { content: " *"; color: crimson; }
+
+/* Destaca o grupo inteiro quando algum campo está em foco */
+fieldset:focus-within { border-color: #ff6b35; }
+
+/* Pinta checkbox, radio, range e progress com a cor da marca */
+form { accent-color: #ff6b35; }
+
+/* Desabilita o botão enquanto o form for inválido */
+form:invalid button[type="submit"] { opacity: .5; pointer-events: none; }</code></pre>
+                <h3>Floating label só com CSS</h3>
+                <pre><code class="code-block">&lt;div class="campo"&gt;
+    &lt;input id="f-email" placeholder=" "&gt;
+    &lt;label for="f-email"&gt;E-mail&lt;/label&gt;
+&lt;/div&gt;
+
+.campo { position: relative; }
+.campo label { position: absolute; left: 12px; top: 12px; transition: .2s; }
+.campo input:not(:placeholder-shown) + label,
+.campo input:focus + label { top: -10px; font-size: .75rem; }</code></pre>
+                <h3>👀 Resultado Visual: digite e saia do campo</h3>
+                <div class="preview-box">
+                    <form class="demo-form demo-states" data-demo>
+                        <label for="s-email">E-mail (fica vermelho/verde só depois de interagir)</label>
+                        <input type="email" id="s-email" name="email" required placeholder="voce@email.com">
+                        <label for="s-num">Número de 1 a 10 (:in-range / :out-of-range)</label>
+                        <input type="number" id="s-num" name="num" min="1" max="10" value="5">
+                        <div class="floating">
+                            <input id="s-float" name="float" placeholder=" ">
+                            <label for="s-float">Floating label</label>
+                        </div>
+                        <label class="inline"><input type="checkbox" checked> accent-color laranja</label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 17 -->
+        <section class="content-section" id="constraint-api">
+            <span class="section-label">17 · CONSTRAINT VALIDATION API</span>
+            <h1>Controle <span class="highlight">total</span> da validação com JS</h1>
+            <div class="content-block">
+                <p>Todo campo de formulário tem uma API de validação embutida. Você aproveita as regras do HTML e personaliza mensagens e comportamentos.</p>
+                <table class="content-table">
+                    <thead><tr><th>Método / propriedade</th><th>O que faz</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>el.checkValidity()</code></td><td>Retorna <code>true</code>/<code>false</code> e dispara o evento <code>invalid</code></td></tr>
+                        <tr><td><code>el.reportValidity()</code></td><td>Igual ao anterior, mas <strong>mostra</strong> o balão de erro</td></tr>
+                        <tr><td><code>el.setCustomValidity(msg)</code></td><td>Define um erro personalizado (<code>""</code> limpa o erro)</td></tr>
+                        <tr><td><code>el.validationMessage</code></td><td>Mensagem de erro atual, no idioma do navegador</td></tr>
+                        <tr><td><code>el.willValidate</code></td><td>Se o campo participa da validação</td></tr>
+                        <tr><td><code>el.validity</code></td><td>Objeto <code>ValidityState</code> com o motivo do erro</td></tr>
+                    </tbody>
+                </table>
+                <h3>Propriedades do ValidityState</h3>
+                <div class="tags-grid">
+                    <div class="tag-card"><h4>valueMissing</h4><p>Campo <code>required</code> vazio</p></div>
+                    <div class="tag-card"><h4>typeMismatch</h4><p>Não é e-mail/URL válido</p></div>
+                    <div class="tag-card"><h4>patternMismatch</h4><p>Não bate com o <code>pattern</code></p></div>
+                    <div class="tag-card"><h4>tooShort / tooLong</h4><p>Fora de <code>minlength</code>/<code>maxlength</code></p></div>
+                    <div class="tag-card"><h4>rangeUnderflow / rangeOverflow</h4><p>Abaixo do <code>min</code> / acima do <code>max</code></p></div>
+                    <div class="tag-card"><h4>stepMismatch</h4><p>Não respeita o <code>step</code></p></div>
+                    <div class="tag-card"><h4>badInput</h4><p>O navegador não conseguiu converter (ex.: letras em number)</p></div>
+                    <div class="tag-card"><h4>customError</h4><p>Erro definido via <code>setCustomValidity</code></p></div>
+                    <div class="tag-card"><h4>valid</h4><p><code>true</code> se nenhum erro acima</p></div>
+                </div>
+                <h3>Exemplo: confirmar senha + mensagens em português</h3>
+                <pre><code class="code-block">const senha = document.querySelector('#senha');
+const confirma = document.querySelector('#confirma');
+
+confirma.addEventListener('input', () =&gt; {
+    confirma.setCustomValidity(
+        confirma.value !== senha.value ? 'As senhas não conferem' : ''
+    );
+});
+
+// Mensagem personalizada para cada tipo de erro
+const email = document.querySelector('#email');
+email.addEventListener('invalid', () =&gt; {
+    if (email.validity.valueMissing) email.setCustomValidity('Informe seu e-mail 🙂');
+    else if (email.validity.typeMismatch) email.setCustomValidity('Esse e-mail parece incompleto');
+});
+email.addEventListener('input', () =&gt; email.setCustomValidity(''));</code></pre>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" id="demo-senha" data-demo novalidate>
+                        <label for="c-senha">Senha</label>
+                        <input type="password" id="c-senha" name="senha" required minlength="6" autocomplete="new-password">
+                        <label for="c-confirma">Confirme a senha</label>
+                        <input type="password" id="c-confirma" name="confirma" required autocomplete="new-password">
+                        <button type="submit" class="demo-btn">Criar conta</button>
+                        <output class="demo-output" aria-live="polite"></output>
+                    </form>
+                </div>
+                <div class="info-box info">
+                    <strong>💡 Dica:</strong> Com <code>novalidate</code> no form, o navegador para de mostrar os balões, mas a API continua funcionando. É assim que bibliotecas criam mensagens de erro personalizadas no próprio layout.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 18 -->
+        <section class="content-section" id="output-progress-meter">
+            <span class="section-label">18 · OUTPUT, PROGRESS E METER</span>
+            <h1>Elementos que quase <span class="highlight">ninguém</span> usa</h1>
+            <div class="content-block">
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>&lt;output&gt;</h4>
+                        <p>Mostra o resultado de um cálculo. É anunciado automaticamente por leitores de tela.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>&lt;progress&gt;</h4>
+                        <p>Progresso de uma tarefa (upload, etapas). Sem <code>value</code> vira uma barra "carregando" indeterminada.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>&lt;meter&gt;</h4>
+                        <p>Medida dentro de um intervalo conhecido (força da senha, armazenamento). Muda de cor com <code>low</code>, <code>high</code> e <code>optimum</code>.</p>
+                    </div>
+                </div>
+                <pre><code class="code-block">&lt;!-- Calculadora sem JS externo: o evento oninput do form --&gt;
+&lt;form oninput="total.value = Number(a.value) * Number(b.value)"&gt;
+    &lt;input type="number" id="a" value="2"&gt; ×
+    &lt;input type="number" id="b" value="3"&gt; =
+    &lt;output name="total" for="a b"&gt;6&lt;/output&gt;
+&lt;/form&gt;
+
+&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;
+&lt;progress&gt;&lt;/progress&gt; &lt;!-- indeterminado --&gt;
+
+&lt;meter value="0.8" min="0" max="1" low="0.3" high="0.7" optimum="1"&gt;80%&lt;/meter&gt;</code></pre>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo oninput="o_total.value = Number(o_a.value) * Number(o_b.value)">
+                        <div class="demo-row">
+                            <input type="number" id="o_a" name="o_a" value="2" aria-label="Primeiro número"> ×
+                            <input type="number" id="o_b" name="o_b" value="3" aria-label="Segundo número"> =
+                            <output name="o_total" for="o_a o_b">6</output>
+                        </div>
+                        <label for="o-prog">Upload: 70%</label>
+                        <progress id="o-prog" value="70" max="100">70%</progress>
+                        <label for="o-indet">Carregando...</label>
+                        <progress id="o-indet"></progress>
+                        <label for="o-pass">Senha (veja a força no meter)</label>
+                        <input type="password" id="o-pass" autocomplete="off">
+                        <meter id="o-meter" value="0" min="0" max="4" low="2" high="3" optimum="4"></meter>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 19 -->
+        <section class="content-section" id="javascript">
+            <span class="section-label">19 · FORMULÁRIOS COM JAVASCRIPT</span>
+            <h1>Enviando sem <span class="highlight">recarregar</span> a página</h1>
+            <div class="content-block">
+                <h3>Acessando formulários e campos</h3>
+                <pre><code class="code-block">const form = document.forms.contato;      // pelo name do form
+form.elements.email.value;                 // campo pelo name
+form.elements.plano.value;                 // valor do radio marcado!
+form.elements.length;                      // quantidade de campos</code></pre>
+                <h3>Enviando com fetch + FormData</h3>
+                <pre><code class="code-block">form.addEventListener('submit', async (event) =&gt; {
+    event.preventDefault();                 // impede o envio tradicional
+
+    const dados = new FormData(form);       // pega TODOS os campos com name
+    const botao = event.submitter;          // qual botão foi clicado
+    botao.disabled = true;                  // evita clique duplo
+
+    try {
+        const resposta = await fetch(form.action, {
+            method: form.method,
+            body: dados                     // já vai como multipart/form-data
+        });
+        if (!resposta.ok) throw new Error('Falha no envio');
+        form.reset();
+    } catch (erro) {
+        alert(erro.message);
+    } finally {
+        botao.disabled = false;
+    }
+});</code></pre>
+                <h3>Truques com FormData</h3>
+                <pre><code class="code-block">// Converter para objeto / JSON
+const objeto = Object.fromEntries(new FormData(form));
+JSON.stringify(objeto);
+
+// Campos com vários valores (checkbox)
+new FormData(form).getAll('hobby');   // ['ler', 'correr']
+
+// Adicionar dados extras
+const fd = new FormData(form);
+fd.append('origem', 'site');
+
+// Mandar como query string (GET)
+const params = new URLSearchParams(new FormData(form));
+fetch('/buscar?' + params);</code></pre>
+                <h3>Eventos importantes</h3>
+                <table class="content-table">
+                    <thead><tr><th>Evento</th><th>Quando dispara</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>input</code></td><td>A cada tecla/alteração</td></tr>
+                        <tr><td><code>change</code></td><td>Quando o valor é "confirmado" (sair do campo, escolher opção)</td></tr>
+                        <tr><td><code>submit</code></td><td>Ao enviar (no <code>&lt;form&gt;</code>, não no botão!)</td></tr>
+                        <tr><td><code>reset</code></td><td>Ao limpar o formulário</td></tr>
+                        <tr><td><code>invalid</code></td><td>Quando um campo falha na validação</td></tr>
+                        <tr><td><code>formdata</code></td><td>Quando um <code>FormData</code> é criado — dá para injetar campos</td></tr>
+                    </tbody>
+                </table>
+                <div class="info-box warning">
+                    <strong>⚠️ submit() x requestSubmit():</strong> <code>form.submit()</code> envia <strong>sem validar</strong> e <strong>sem disparar</strong> o evento <code>submit</code>. Use <code>form.requestSubmit()</code>, que se comporta como um clique real no botão.
+                </div>
+                <h3>👀 Resultado Visual: veja o FormData em tempo real</h3>
+                <div class="preview-box">
+                    <form class="demo-form" id="demo-formdata" data-demo>
+                        <label for="j-nome">Nome</label>
+                        <input id="j-nome" name="nome" value="Ana">
+                        <fieldset>
+                            <legend>Hobbies</legend>
+                            <label class="inline"><input type="checkbox" name="hobby" value="ler" checked> Ler</label>
+                            <label class="inline"><input type="checkbox" name="hobby" value="correr"> Correr</label>
+                            <label class="inline"><input type="checkbox" name="hobby" value="codar" checked> Codar</label>
+                        </fieldset>
+                        <label for="j-sem-name">Campo sem name (não aparece!)</label>
+                        <input id="j-sem-name" value="sou invisível">
+                        <pre class="demo-json" aria-live="polite"></pre>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 20 -->
+        <section class="content-section" id="hacks">
+            <span class="section-label">20 · HACKS E TRUQUES AVANÇADOS</span>
+            <h1>O que os <span class="highlight">seniores</span> sabem</h1>
+            <div class="content-block">
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>1. Campo fora do form (atributo form)</h4>
+                        <p>Um campo pode pertencer a um formulário estando em <strong>qualquer lugar</strong> da página — até dentro de outro form.</p>
+                        <pre><code class="code-block">&lt;form id="busca" action="/buscar"&gt;&lt;/form&gt;
+
+&lt;header&gt;
+    &lt;input name="q" form="busca"&gt;
+    &lt;button form="busca"&gt;🔍&lt;/button&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>2. method="dialog"</h4>
+                        <p>Dentro de um <code>&lt;dialog&gt;</code>, fecha o modal sem enviar nada. O <code>value</code> do botão vira o <code>returnValue</code>.</p>
+                        <pre><code class="code-block">&lt;dialog id="confirmar"&gt;
+    &lt;form method="dialog"&gt;
+        &lt;p&gt;Excluir item?&lt;/p&gt;
+        &lt;button value="nao"&gt;Cancelar&lt;/button&gt;
+        &lt;button value="sim"&gt;Excluir&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/dialog&gt;
+&lt;!-- confirmar.returnValue === 'sim' --&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>3. Travar tudo com fieldset disabled</h4>
+                        <p>Evite envio duplicado desabilitando o formulário inteiro durante o <code>fetch</code>.</p>
+                        <pre><code class="code-block">&lt;form&gt;
+    &lt;fieldset id="campos"&gt; ...todos os campos... &lt;/fieldset&gt;
+&lt;/form&gt;
+
+campos.disabled = true;  // trava
+await fetch(...);
+campos.disabled = false; // destrava</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>4. Honeypot anti-spam</h4>
+                        <p>Um campo escondido que humanos não veem, mas robôs preenchem. Se vier preenchido, descarte no servidor.</p>
+                        <pre><code class="code-block">&lt;div style="position:absolute; left:-9999px" aria-hidden="true"&gt;
+    &lt;label&gt;Não preencha
+        &lt;input name="website" tabindex="-1" autocomplete="off"&gt;
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>5. Abrir o seletor via JS: showPicker()</h4>
+                        <p>Abre o calendário, seletor de cor, arquivo ou datalist a partir de qualquer botão.</p>
+                        <pre><code class="code-block">botao.addEventListener('click', () =&gt; {
+    inputData.showPicker();
+});</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>6. Mostrar/ocultar senha</h4>
+                        <p>Basta trocar o <code>type</code>. Lembre do <code>type="button"</code>!</p>
+                        <pre><code class="code-block">&lt;button type="button" onclick="
+  senha.type = senha.type === 'password' ? 'text' : 'password'
+"&gt;👁️&lt;/button&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>7. Upload de pasta e câmera</h4>
+                        <p>Seleção de diretório inteiro ou foto direto da câmera no celular.</p>
+                        <pre><code class="code-block">&lt;input type="file" webkitdirectory&gt;
+&lt;input type="file" accept="image/*" capture="environment"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>8. Preview de imagem antes do upload</h4>
+                        <p>Sem enviar ao servidor: o navegador cria uma URL temporária.</p>
+                        <pre><code class="code-block">input.addEventListener('change', () =&gt; {
+    img.src = URL.createObjectURL(input.files[0]);
+});</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>9. Estilizar com :has()</h4>
+                        <p>O pai reage ao estado do filho — sem JS.</p>
+                        <pre><code class="code-block">/* Card fica marcado quando o radio dentro dele é escolhido */
+.plano:has(input:checked) { border-color: #ff6b35; }
+
+/* Form mostra aviso se tiver algum campo inválido */
+form:has(:user-invalid) .aviso { display: block; }</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>10. Botão de submit com nome e valor</h4>
+                        <p>Descubra no servidor qual botão foi clicado.</p>
+                        <pre><code class="code-block">&lt;button name="acao" value="aprovar"&gt;Aprovar&lt;/button&gt;
+&lt;button name="acao" value="rejeitar"&gt;Rejeitar&lt;/button&gt;
+&lt;!-- Enviado: acao=aprovar --&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>11. Bloquear rodinha no type="number"</h4>
+                        <p>Evita que o valor mude ao rolar a página com o mouse em cima do campo.</p>
+                        <pre><code class="code-block">document.addEventListener('wheel', () =&gt; {
+    if (document.activeElement.type === 'number') {
+        document.activeElement.blur();
+    }
+});</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>12. Avisar antes de sair com dados não salvos</h4>
+                        <p>Evite perder um formulário longo preenchido pela metade.</p>
+                        <pre><code class="code-block">let sujo = false;
+form.addEventListener('input', () =&gt; sujo = true);
+form.addEventListener('submit', () =&gt; sujo = false);
+window.addEventListener('beforeunload', (e) =&gt; {
+    if (sujo) e.preventDefault();
+});</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>13. Busca que já funciona sem JS</h4>
+                        <p>Use <code>&lt;search&gt;</code> (novo elemento semântico) com <code>method="get"</code>: a URL resultante pode ser compartilhada.</p>
+                        <pre><code class="code-block">&lt;search&gt;
+    &lt;form action="/produtos" role="search"&gt;
+        &lt;input type="search" name="q" enterkeyhint="search"&gt;
+    &lt;/form&gt;
+&lt;/search&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>14. Resetar a aparência nativa</h4>
+                        <p>Remove o estilo padrão do sistema para criar seu próprio design.</p>
+                        <pre><code class="code-block">select, input[type="checkbox"] {
+    appearance: none;
+}
+/* 🆕 select customizável (Chromium) */
+select, ::picker(select) {
+    appearance: base-select;
+}</code></pre>
+                    </div>
+                </div>
+                <h3>👀 Resultado Visual: alguns hacks funcionando</h3>
+                <div class="preview-box">
+                    <form class="demo-form" data-demo>
+                        <label for="h-senha">Senha com mostrar/ocultar</label>
+                        <div class="demo-row">
+                            <input type="password" id="h-senha" value="minhaSenha123" autocomplete="off">
+                            <button type="button" class="demo-btn" id="h-toggle" aria-pressed="false">👁️ Mostrar</button>
+                        </div>
+                        <label for="h-data">Data com showPicker()</label>
+                        <div class="demo-row">
+                            <input type="date" id="h-data">
+                            <button type="button" class="demo-btn" id="h-picker">📅 Abrir calendário</button>
+                        </div>
+                        <label for="h-img">Preview de imagem</label>
+                        <input type="file" id="h-img" accept="image/*">
+                        <img id="h-preview" class="demo-preview" alt="Pré-visualização da imagem escolhida" hidden>
+                        <fieldset class="demo-planos">
+                            <legend>Cards com :has(input:checked)</legend>
+                            <label class="plano"><input type="radio" name="h-plano" checked> Básico</label>
+                            <label class="plano"><input type="radio" name="h-plano"> Pro</label>
+                            <label class="plano"><input type="radio" name="h-plano"> Equipe</label>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 21 -->
+        <section class="content-section" id="seguranca">
+            <span class="section-label">21 · SEGURANÇA</span>
+            <h1>Nunca confie no que vem do <span class="highlight">formulário</span></h1>
+            <div class="content-block">
+                <p>Tudo que está no navegador pode ser alterado pelo usuário. O HTML ajuda na experiência, mas a <strong>segurança mora no servidor</strong>.</p>
+                <table class="content-table">
+                    <thead><tr><th>Risco</th><th>Como se proteger</th></tr></thead>
+                    <tbody>
+                        <tr><td>Burlar validação do HTML</td><td>Revalide <strong>todos</strong> os dados no back-end</td></tr>
+                        <tr><td>Dados interceptados</td><td>Use sempre <strong>HTTPS</strong>; o navegador alerta formulários de senha em HTTP</td></tr>
+                        <tr><td>Senha na URL</td><td>Use <code>method="post"</code> para dados sensíveis</td></tr>
+                        <tr><td>CSRF (site falso envia form para o seu)</td><td>Token secreto em <code>&lt;input type="hidden"&gt;</code> + cookies <code>SameSite</code></td></tr>
+                        <tr><td>XSS (injetar script pelo campo)</td><td>Escape o conteúdo ao exibir; nunca use <code>innerHTML</code> com dados do usuário</td></tr>
+                        <tr><td>SQL Injection</td><td>Consultas parametrizadas no banco de dados</td></tr>
+                        <tr><td>Upload malicioso</td><td>Verifique tipo real, tamanho e renomeie o arquivo no servidor</td></tr>
+                        <tr><td>Spam e robôs</td><td>Honeypot, rate limit e CAPTCHA quando necessário</td></tr>
+                        <tr><td>Força bruta no login</td><td>Limite de tentativas e mensagens genéricas ("usuário ou senha inválidos")</td></tr>
+                    </tbody>
+                </table>
+                <pre><code class="code-block">&lt;form action="/transferir" method="post"&gt;
+    &lt;!-- Token gerado pelo servidor, único por sessão --&gt;
+    &lt;input type="hidden" name="csrf_token" value="a8f5f167f44f4964e6c998dee827110c"&gt;
+    ...
+&lt;/form&gt;</code></pre>
+                <div class="info-box warning">
+                    <strong>⚠️ Lembre:</strong> <code>type="hidden"</code>, <code>readonly</code> e <code>disabled</code> <strong>não protegem nada</strong>. O usuário pode alterar qualquer valor pelo DevTools antes de enviar (inclusive o preço de um produto!).
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 22 -->
+        <section class="content-section" id="acessibilidade">
+            <span class="section-label">22 · ACESSIBILIDADE EM FORMULÁRIOS</span>
+            <h1>Formulários para <span class="highlight">todas</span> as pessoas</h1>
+            <div class="content-block">
+                <p>Um formulário inacessível é um formulário que <strong>não funciona</strong> para milhões de pessoas — e as diretrizes WCAG exigem que funcione.</p>
+                <h3>Checklist de acessibilidade</h3>
+                <ul>
+                    <li>✅ Todo campo tem um <code>&lt;label&gt;</code> visível e associado</li>
+                    <li>✅ Grupos de radio/checkbox dentro de <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code></li>
+                    <li>✅ Instruções e erros ligados ao campo com <code>aria-describedby</code></li>
+                    <li>✅ Campos com erro marcados com <code>aria-invalid="true"</code></li>
+                    <li>✅ Erros anunciados com <code>aria-live</code> ou <code>role="alert"</code></li>
+                    <li>✅ Erro não indicado <strong>apenas</strong> por cor (use ícone + texto)</li>
+                    <li>✅ Ordem de foco lógica e foco sempre visível (<code>:focus-visible</code>)</li>
+                    <li>✅ Tudo funciona só com teclado (Tab, Shift+Tab, Espaço, Enter, setas)</li>
+                    <li>✅ Área de clique de pelo menos 24×24px (ideal 44×44px no celular)</li>
+                    <li>✅ Obrigatoriedade informada no texto, não só com <code>*</code></li>
+                </ul>
+                <pre><code class="code-block">&lt;label for="senha"&gt;Senha (obrigatório)&lt;/label&gt;
+&lt;input type="password" id="senha" name="senha" required
+       aria-describedby="senha-dica senha-erro"
+       aria-invalid="true"&gt;
+&lt;p id="senha-dica"&gt;Mínimo de 8 caracteres, com um número.&lt;/p&gt;
+&lt;p id="senha-erro" role="alert"&gt;⚠️ A senha precisa ter um número.&lt;/p&gt;</code></pre>
+                <h3>Quando não há label visível</h3>
+                <pre><code class="code-block">&lt;!-- Opção 1: aria-label --&gt;
+&lt;input type="search" name="q" aria-label="Buscar no site"&gt;
+
+&lt;!-- Opção 2: label escondido visualmente (mas lido pelo leitor de tela) --&gt;
+&lt;label for="q" class="sr-only"&gt;Buscar no site&lt;/label&gt;
+
+.sr-only {
+    position: absolute; width: 1px; height: 1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}</code></pre>
+                <div class="info-box info">
+                    <strong>💡 Teste você mesmo:</strong> desconecte o mouse e tente preencher seu formulário só com o teclado. Depois teste com um leitor de tela (NVDA no Windows, VoiceOver no Mac/iPhone).
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 23 -->
+        <section class="content-section" id="boas-praticas">
+            <span class="section-label">23 · BOAS PRÁTICAS DE UX</span>
+            <h1>Formulários que as pessoas <span class="highlight">terminam</span></h1>
+            <div class="content-block">
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>✅ Sempre faça</h4>
+                        <ul>
+                            <li>Peça só o necessário — cada campo a mais reduz conversões</li>
+                            <li>Uma coluna só: o olho segue de cima para baixo</li>
+                            <li>Label acima do campo</li>
+                            <li>Use o <code>type</code>, <code>inputmode</code> e <code>autocomplete</code> corretos</li>
+                            <li>Mostre o formato esperado antes do erro</li>
+                            <li>Valide ao sair do campo, não a cada tecla</li>
+                            <li>Botão com verbo claro: "Criar conta", não "Enviar"</li>
+                            <li>Dê feedback de carregamento e de sucesso</li>
+                            <li>Divida formulários longos em etapas</li>
+                            <li>Permita colar em todos os campos</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>❌ Nunca faça</h4>
+                        <ul>
+                            <li>Placeholder no lugar de label</li>
+                            <li>Bloquear colar em senha ou e-mail</li>
+                            <li>Botão "Limpar" ao lado de "Enviar"</li>
+                            <li>Apagar os dados após um erro</li>
+                            <li>Mostrar erros antes do usuário digitar</li>
+                            <li>Campos "confirme seu e-mail" desnecessários</li>
+                            <li>CAPTCHA logo de cara</li>
+                            <li>Desabilitar o botão sem explicar o motivo</li>
+                            <li>Selects gigantes para poucos itens (use radio)</li>
+                            <li>Separar nome em 3 campos sem necessidade</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Qual campo usar?</h3>
+                <table class="content-table">
+                    <thead><tr><th>Situação</th><th>Melhor escolha</th></tr></thead>
+                    <tbody>
+                        <tr><td>2 a 5 opções, uma escolha</td><td>Radio</td></tr>
+                        <tr><td>Mais de 5 opções, uma escolha</td><td>Select</td></tr>
+                        <tr><td>Muitas opções + texto livre</td><td>Input + datalist</td></tr>
+                        <tr><td>Várias escolhas</td><td>Checkboxes</td></tr>
+                        <tr><td>Sim/Não</td><td>Um checkbox</td></tr>
+                        <tr><td>Número de 1 a 5</td><td>Radio ou range</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 24 -->
+        <section class="content-section" id="form-completo">
+            <span class="section-label">24 · FORMULÁRIO COMPLETO</span>
+            <h1>Juntando <span class="highlight">tudo</span> que aprendemos</h1>
+            <div class="content-block">
+                <pre><code class="code-block">&lt;form action="/inscricao" method="post" enctype="multipart/form-data"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Dados pessoais&lt;/legend&gt;
+
+        &lt;label for="nome"&gt;Nome completo&lt;/label&gt;
+        &lt;input id="nome" name="nome" required minlength="3" autocomplete="name"&gt;
+
+        &lt;label for="email"&gt;E-mail&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required autocomplete="email"
+               aria-describedby="email-dica"&gt;
+        &lt;small id="email-dica"&gt;Enviaremos a confirmação para ele.&lt;/small&gt;
+
+        &lt;label for="tel"&gt;Celular&lt;/label&gt;
+        &lt;input type="tel" id="tel" name="tel" autocomplete="tel"
+               pattern="\(?\d{2}\)?\s?9\d{4}-?\d{4}" placeholder="(81) 99999-9999"&gt;
+
+        &lt;label for="nasc"&gt;Nascimento&lt;/label&gt;
+        &lt;input type="date" id="nasc" name="nascimento" autocomplete="bday"&gt;
+    &lt;/fieldset&gt;
+
+    &lt;fieldset&gt;
+        &lt;legend&gt;Curso&lt;/legend&gt;
+
+        &lt;label for="trilha"&gt;Trilha&lt;/label&gt;
+        &lt;select id="trilha" name="trilha" required&gt;
+            &lt;option value=""&gt;Selecione...&lt;/option&gt;
+            &lt;optgroup label="Front-end"&gt;
+                &lt;option value="html"&gt;HTML&lt;/option&gt;
+                &lt;option value="css"&gt;CSS&lt;/option&gt;
+            &lt;/optgroup&gt;
+        &lt;/select&gt;
+
+        &lt;fieldset&gt;
+            &lt;legend&gt;Turno&lt;/legend&gt;
+            &lt;label&gt;&lt;input type="radio" name="turno" value="manha" required&gt; Manhã&lt;/label&gt;
+            &lt;label&gt;&lt;input type="radio" name="turno" value="noite"&gt; Noite&lt;/label&gt;
+        &lt;/fieldset&gt;
+
+        &lt;label for="nivel"&gt;Nível de experiência&lt;/label&gt;
+        &lt;input type="range" id="nivel" name="nivel" min="0" max="10" value="3"&gt;
+
+        &lt;label for="cv"&gt;Currículo (PDF)&lt;/label&gt;
+        &lt;input type="file" id="cv" name="cv" accept=".pdf"&gt;
+
+        &lt;label for="motivo"&gt;Por que quer participar?&lt;/label&gt;
+        &lt;textarea id="motivo" name="motivo" rows="4" maxlength="500"&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+
+    &lt;label&gt;
+        &lt;input type="checkbox" name="termos" required&gt;
+        Li e aceito os termos de uso
+    &lt;/label&gt;
+
+    &lt;input type="hidden" name="origem" value="site"&gt;
+
+    &lt;button type="submit"&gt;Fazer inscrição&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <h3>👀 Resultado Visual: preencha e envie!</h3>
+                <div class="preview-box">
+                    <form class="demo-form" id="demo-completo" data-demo>
+                        <fieldset>
+                            <legend>Dados pessoais</legend>
+                            <label for="fc-nome">Nome completo</label>
+                            <input id="fc-nome" name="nome" required minlength="3" autocomplete="name">
+                            <label for="fc-email">E-mail</label>
+                            <input type="email" id="fc-email" name="email" required autocomplete="email" aria-describedby="fc-email-dica">
+                            <small id="fc-email-dica">Enviaremos a confirmação para ele.</small>
+                            <label for="fc-tel">Celular</label>
+                            <input type="tel" id="fc-tel" name="tel" autocomplete="tel" pattern="\(?\d{2}\)?\s?9\d{4}-?\d{4}" placeholder="(81) 99999-9999">
+                            <label for="fc-nasc">Nascimento</label>
+                            <input type="date" id="fc-nasc" name="nascimento" autocomplete="bday">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Curso</legend>
+                            <label for="fc-trilha">Trilha</label>
+                            <select id="fc-trilha" name="trilha" required>
+                                <option value="">Selecione...</option>
+                                <optgroup label="Front-end">
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                </optgroup>
+                            </select>
+                            <fieldset>
+                                <legend>Turno</legend>
+                                <label class="inline"><input type="radio" name="turno" value="manha" required> Manhã</label>
+                                <label class="inline"><input type="radio" name="turno" value="noite"> Noite</label>
+                            </fieldset>
+                            <label for="fc-nivel">Nível de experiência: <output for="fc-nivel" id="fc-nivel-out">3</output></label>
+                            <input type="range" id="fc-nivel" name="nivel" min="0" max="10" value="3">
+                            <label for="fc-cv">Currículo (PDF)</label>
+                            <input type="file" id="fc-cv" name="cv" accept=".pdf">
+                            <label for="fc-motivo">Por que quer participar?</label>
+                            <textarea id="fc-motivo" name="motivo" rows="4" maxlength="500"></textarea>
+                        </fieldset>
+                        <label class="inline"><input type="checkbox" name="termos" required> Li e aceito os termos de uso</label>
+                        <input type="hidden" name="origem" value="site">
+                        <button type="submit" class="demo-btn">Fazer inscrição</button>
+                        <pre class="demo-json" aria-live="polite"></pre>
+                    </form>
+                </div>
+                <div class="info-box tip">
+                    <strong>✨ Repare:</strong> ao enviar, mostramos o objeto gerado pelo <code>FormData</code> — exatamente o que chegaria ao servidor. Nenhum dado sai da sua máquina.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 25 -->
+        <section class="content-section" id="desafio">
+            <span class="section-label">25 · DESAFIO DA AULA</span>
+            <h1>Coloque em <span class="highlight">prática</span>!</h1>
+            <div class="content-block">
+                <div class="challenge-box">
+                    <h4>🥉 Nível 1 — Formulário de contato</h4>
+                    <ul>
+                        <li>Nome, e-mail e mensagem, todos obrigatórios</li>
+                        <li>Assunto em um <code>&lt;select&gt;</code> com placeholder</li>
+                        <li>Todos os campos com <code>&lt;label&gt;</code> associado</li>
+                        <li>Botão <code>type="submit"</code> com texto claro</li>
+                    </ul>
+                </div>
+                <div class="challenge-box">
+                    <h4>🥈 Nível 2 — Cadastro completo</h4>
+                    <ul>
+                        <li>Agrupe com <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code></li>
+                        <li>CPF e CEP com <code>pattern</code> e <code>inputmode="numeric"</code></li>
+                        <li>Tokens de <code>autocomplete</code> corretos em todos os campos</li>
+                        <li>Radios para gênero/plano e checkbox de termos obrigatório</li>
+                        <li>Upload de foto com <code>accept="image/*"</code></li>
+                        <li>Estilize <code>:user-invalid</code> e <code>:user-valid</code></li>
+                    </ul>
+                </div>
+                <div class="challenge-box">
+                    <h4>🥇 Nível 3 — Modo hacker</h4>
+                    <ul>
+                        <li>Confirmar senha com <code>setCustomValidity</code></li>
+                        <li>Medidor de força da senha com <code>&lt;meter&gt;</code></li>
+                        <li>Preview da foto com <code>URL.createObjectURL</code></li>
+                        <li>Envio com <code>fetch</code> + <code>FormData</code>, travando o form com <code>fieldset disabled</code></li>
+                        <li>Honeypot anti-spam</li>
+                        <li>Teste tudo usando apenas o teclado</li>
+                    </ul>
+                </div>
+                <div class="info-box info">
+                    <strong>💡 Dica:</strong> use <a href="https://httpbin.org/post" target="_blank" rel="noopener">httpbin.org/post</a> como <code>action</code> para ver exatamente o que seu formulário enviou!
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section">
+            <h2>Pronto para interagir?</h2>
+            <p>Agora você domina formulários do básico ao avançado: tipos de campo, validação, acessibilidade, segurança e hacks. Seus usuários agradecem!</p>
+            <div class="cta-buttons">
+                <a href="../aula4/index.html" class="btn btn-secondary"><img src="../img/right-arrow.png" alt="←" class="btn-icon-left"> Voltar para Aulas</a>
+                <a href="../aula6/index.html" class="btn btn-primary">Próxima Aula <img src="../img/right-arrow.png" alt="→" class="btn-icon"></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-to-top" onclick="scrollToTop()"><img src="../img/next.png" alt="↑"></button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 <a href="https://github.com/rhayssakramer/tudo-sobre-html">HTML Lab</a>. Feito com 🧡 para quem quer aprender HTML de verdade.</p>
+            <div class="footer-links">
+                <a href="../">Sobre</a>
+                <a href="../">Aulas</a>
+                <a href="https://github.com/rhayssakramer" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
