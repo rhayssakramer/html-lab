@@ -31,7 +31,7 @@ Cada aula é uma página independente sobre um tema específico do HTML. Você p
 
 | # | Tema | Categoria | Tópicos principais |
 |---|------|-----------|------------------|
-| **[01](aula1/)** | Introdução ao HTML | Fundamentos | Tags · Estrutura · Elementos · Anatomia de uma tag |
+| **[01](aula1/)** | Introdução ao HTML | Fundamentos | História · Estrutura do documento · Anatomia de uma tag · Elementos e atributos · Tags principais · Head · Entidades · Semântica · Laboratório ao vivo · Client x Server · Como o navegador interpreta o HTML · Hacks |
 | **[02](aula2/)** | Formatando Textos | Textos | Tags de texto · Hierarquia · Semântica |
 | **[03](aula3/)** | Navegação com Links | Links | Tag `<a>` · Navegação interna e externa · Âncoras |
 | **[04](aula4/)** | Inserindo Imagens | Imagens | Tag `<img>` · Alt · Figure · Picture · Formatos · Lazy loading · Acessibilidade |
