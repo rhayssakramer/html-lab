@@ -24,19 +24,32 @@
                         <li><a href="#historia">1. História do HTML</a></li>
                         <li><a href="#timeline">2. Timeline do HTML</a></li>
                         <li><a href="#oque-html">3. O que é o HTML?</a></li>
-                        <li><a href="#client-server">4. Comunicação Client x Server</a></li>
-                        <li><a href="#protocolos">5. O que são Protocolos?</a></li>
-                        <li><a href="#requisicao">6. Requisição (Request)</a></li>
-                        <li><a href="#resposta">7. Resposta (Response)</a></li>
-                        <li><a href="#formatos">8. Formatos de Dados</a></li>
-                        <li><a href="#apis">9. APIs (Application Programming Interface)</a></li>
-                        <li><a href="#navegadores">10. Navegadores</a></li>
-                        <li><a href="#apps-web">11. Aplicações Web</a></li>
-                        <li><a href="#mobile">12. Dispositivos Móveis</a></li>
-                        <li><a href="#tabela-client-server">13. Client vs Server (Tabela)</a></li>
-                        <li><a href="#curiosidades">14. Curiosidades e Dicas</a></li>
-                        <li><a href="#recursos">15. Recursos Externos</a></li>
-                        <li><a href="#atividade">16. Atividade Prática</a></li>
+                        <li><a href="#ferramentas">4. Ferramentas para Começar</a></li>
+                        <li><a href="#estrutura">5. Estrutura Básica do Documento</a></li>
+                        <li><a href="#anatomia">6. Anatomia de uma Tag</a></li>
+                        <li><a href="#elementos">7. Elementos: Aninhamento, Void, Block e Inline</a></li>
+                        <li><a href="#atributos">8. Atributos</a></li>
+                        <li><a href="#tags-principais">9. Tags Principais</a></li>
+                        <li><a href="#head">10. O &lt;head&gt; em Detalhe</a></li>
+                        <li><a href="#comentarios-entidades">11. Comentários, Espaços e Entidades</a></li>
+                        <li><a href="#semantica">12. Semântica e Acessibilidade</a></li>
+                        <li><a href="#playground">13. Laboratório ao Vivo</a></li>
+                        <li><a href="#client-server">14. Comunicação Client x Server</a></li>
+                        <li><a href="#protocolos">15. O que são Protocolos?</a></li>
+                        <li><a href="#requisicao">16. Requisição (Request)</a></li>
+                        <li><a href="#resposta">17. Resposta (Response)</a></li>
+                        <li><a href="#formatos">18. Formatos de Dados</a></li>
+                        <li><a href="#apis">19. APIs (Application Programming Interface)</a></li>
+                        <li><a href="#navegadores">20. Navegadores</a></li>
+                        <li><a href="#interpretacao">21. Como o Navegador Interpreta o HTML</a></li>
+                        <li><a href="#apps-web">22. Aplicações Web</a></li>
+                        <li><a href="#mobile">23. Dispositivos Móveis</a></li>
+                        <li><a href="#tabela-client-server">24. Client vs Server (Tabela)</a></li>
+                        <li><a href="#hacks">25. Hacks e Recursos Avançados</a></li>
+                        <li><a href="#erros-comuns">26. Erros Comuns e Boas Práticas</a></li>
+                        <li><a href="#curiosidades">27. Curiosidades e Dicas</a></li>
+                        <li><a href="#recursos">28. Recursos Externos</a></li>
+                        <li><a href="#atividade">29. Atividade Prática</a></li>
                     </ul>
                 </div>
                 <a href="../#recursos">Recursos</a>
@@ -62,23 +75,36 @@
         <!-- TABELA DE CONTEÚDOS -->
         <section class="toc-section">
             <h2>📚 Índice de Conteúdos</h2>
-            <nav class="toc-list">
+            <nav class="toc-list" id="toc-list">
                 <a href="#historia">1. História do HTML</a>
                 <a href="#timeline">2. Timeline do HTML</a>
                 <a href="#oque-html">3. O que é o HTML?</a>
-                <a href="#client-server">4. Comunicação Client x Server</a>
-                <a href="#protocolos">5. O que são Protocolos?</a>
-                <a href="#requisicao">6. Requisição (Request)</a>
-                <a href="#resposta">7. Resposta (Response)</a>
-                <a href="#formatos">8. Formatos de Dados</a>
-                <a href="#apis">9. APIs (Application Programming Interface)</a>
-                <a href="#navegadores">10. Navegadores</a>
-                <a href="#apps-web">11. Aplicações Web</a>
-                <a href="#mobile">12. Dispositivos Móveis</a>
-                <a href="#tabela-client-server">13. Client vs Server (Tabela)</a>
-                <a href="#curiosidades">14. Curiosidades e Dicas</a>
-                <a href="#recursos">15. Recursos Externos</a>
-                <a href="#atividade">16. Atividade Prática</a>
+                <a href="#ferramentas">4. Ferramentas para Começar</a>
+                <a href="#estrutura">5. Estrutura Básica do Documento</a>
+                <a href="#anatomia">6. Anatomia de uma Tag</a>
+                <a href="#elementos">7. Elementos: Aninhamento, Void, Block e Inline</a>
+                <a href="#atributos">8. Atributos</a>
+                <a href="#tags-principais">9. Tags Principais</a>
+                <a href="#head">10. O &lt;head&gt; em Detalhe</a>
+                <a href="#comentarios-entidades">11. Comentários, Espaços e Entidades</a>
+                <a href="#semantica">12. Semântica e Acessibilidade</a>
+                <a href="#playground">13. Laboratório ao Vivo</a>
+                <a href="#client-server">14. Comunicação Client x Server</a>
+                <a href="#protocolos">15. O que são Protocolos?</a>
+                <a href="#requisicao">16. Requisição (Request)</a>
+                <a href="#resposta">17. Resposta (Response)</a>
+                <a href="#formatos">18. Formatos de Dados</a>
+                <a href="#apis">19. APIs (Application Programming Interface)</a>
+                <a href="#navegadores">20. Navegadores</a>
+                <a href="#interpretacao">21. Como o Navegador Interpreta o HTML</a>
+                <a href="#apps-web">22. Aplicações Web</a>
+                <a href="#mobile">23. Dispositivos Móveis</a>
+                <a href="#tabela-client-server">24. Client vs Server (Tabela)</a>
+                <a href="#hacks">25. Hacks e Recursos Avançados</a>
+                <a href="#erros-comuns">26. Erros Comuns e Boas Práticas</a>
+                <a href="#curiosidades">27. Curiosidades e Dicas</a>
+                <a href="#recursos">28. Recursos Externos</a>
+                <a href="#atividade">29. Atividade Prática</a>
             </nav>
         </section>
 
@@ -120,7 +146,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 2: TIMELINE DA EVOLUÇÃO DO HTML -->
+        <!-- SEÇÃO 2: TIMELINE DO HTML -->
         <section class="content-section" id="timeline">
             <span class="section-label">02 · TIMELINE DO HTML</span>
             <h2>A evolução do <span class="highlight">HTML ao longo dos anos</span>.</h2>
@@ -173,7 +199,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 3: O QUE É HTML? -->
+        <!-- SEÇÃO 3: O QUE É O HTML? -->
         <section class="content-section" id="oque-html">
             <span class="section-label">03 · O QUE É HTML?</span>
             <h1>A linguagem de marcação que <span class="highlight">constrói a web</span>.</h1>
@@ -212,9 +238,545 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 4: COMUNICAÇÃO CLIENT X SERVER -->
+        <!-- SEÇÃO 4: FERRAMENTAS PARA COMEÇAR -->
+        <section class="content-section" id="ferramentas">
+            <span class="section-label">04 · FERRAMENTAS PARA COMEÇAR</span>
+            <h1>Tudo que você precisa já está no seu <span class="highlight">computador</span>.</h1>
+
+            <div class="content-block">
+                <p>Para escrever HTML você só precisa de <strong>duas coisas</strong>: um editor de texto e um navegador. Nada de instalar compiladores ou servidores para começar.</p>
+
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>📝 Editor de código</h4>
+                        <p><strong>VS Code</strong> (recomendado, gratuito), Sublime Text, Notepad++ ou até o Bloco de Notas. Editores de código colorem a sintaxe e completam as tags para você.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>🌐 Navegador</h4>
+                        <p>Chrome, Edge, Firefox ou Safari. Basta dar <strong>duplo clique</strong> no arquivo <code>.html</code> para abri-lo.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>🔍 DevTools</h4>
+                        <p>Ferramentas de desenvolvedor do navegador. Abra com <kbd>F12</kbd> ou <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> (<kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> no Mac).</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>🧩 Extensões úteis (VS Code)</h4>
+                        <p><strong>Live Server</strong> (recarrega a página ao salvar), <strong>Prettier</strong> (formata o código) e <strong>Auto Rename Tag</strong> (renomeia a tag de fechamento junto).</p>
+                    </div>
+                </div>
+
+                <h3>📁 Regras dos arquivos HTML</h3>
+                <ul>
+                    <li>A extensão é <code>.html</code> (ou <code>.htm</code>, mais antiga)</li>
+                    <li>A página principal de um site se chama <code>index.html</code>: servidores a abrem automaticamente ao acessar uma pasta</li>
+                    <li>Use nomes <strong>sem espaços, sem acentos e em minúsculas</strong>: <code>sobre-nos.html</code>, não <code>Sobre Nós.html</code></li>
+                    <li>Salve sempre com codificação <strong>UTF-8</strong> (padrão no VS Code)</li>
+                </ul>
+
+                <div class="info-box tip">
+                    <strong>✨ Hack do VS Code:</strong> em um arquivo <code>.html</code> vazio, digite <code>!</code> e pressione <kbd>Tab</kbd>. O <strong>Emmet</strong> gera toda a estrutura básica do documento! Experimente também <code>ul&gt;li*3</code> + <kbd>Tab</kbd>.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 5: ESTRUTURA BÁSICA DO DOCUMENTO -->
+        <section class="content-section" id="estrutura">
+            <span class="section-label">05 · ESTRUTURA BÁSICA DE UM DOCUMENTO</span>
+            <h1>O <span class="highlight">esqueleto</span> de toda página web.</h1>
+
+            <div class="content-block">
+                <p>Todo documento HTML segue a mesma estrutura mínima. Memorize este modelo: ele é o ponto de partida de <strong>qualquer</strong> página.</p>
+
+                <pre><code class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Minha Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Meu primeiro parágrafo.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h3>🔎 Linha por linha</h3>
+                <table class="content-table">
+                    <thead><tr><th>Código</th><th>O que faz</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declara que o documento é HTML5. <strong>Não é uma tag</strong>, é uma instrução para o navegador usar o modo padrão de renderização.</td></tr>
+                        <tr><td><code>&lt;html lang="pt-BR"&gt;</code></td><td>Elemento <strong>raiz</strong>: envolve todo o documento. O <code>lang</code> informa o idioma para leitores de tela, tradutores e buscadores.</td></tr>
+                        <tr><td><code>&lt;head&gt;</code></td><td>Cabeça: <strong>informações sobre a página</strong> (metadados). Nada aqui aparece no corpo da página.</td></tr>
+                        <tr><td><code>&lt;meta charset="UTF-8"&gt;</code></td><td>Codificação de caracteres. Garante que acentos e emojis apareçam corretamente (sem "Ã§Ã£o").</td></tr>
+                        <tr><td><code>&lt;meta name="viewport"&gt;</code></td><td>Faz a página se adaptar à largura do celular. Sem ele, o site aparece "miniaturizado".</td></tr>
+                        <tr><td><code>&lt;title&gt;</code></td><td>Texto da <strong>aba do navegador</strong>, dos favoritos e do título no Google. Obrigatório!</td></tr>
+                        <tr><td><code>&lt;body&gt;</code></td><td>Corpo: <strong>todo o conteúdo visível</strong> (textos, imagens, links, botões).</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>🌳 Hierarquia: pais, filhos e irmãos</h3>
+                <p>O HTML é uma <strong>árvore</strong>. Cada elemento dentro de outro é seu <em>filho</em>; elementos lado a lado são <em>irmãos</em>.</p>
+                <pre><code class="code-block">html                  ← raiz (pai de head e body)
+├── head              ← filho de html, irmão de body
+│   ├── meta
+│   ├── meta
+│   └── title
+└── body              ← filho de html
+    ├── h1            ← filho de body, irmão de p
+    └── p</code></pre>
+
+                <div class="info-box warning">
+                    <strong>⚠️ Regra:</strong> só pode existir <strong>um</strong> <code>&lt;html&gt;</code>, <strong>um</strong> <code>&lt;head&gt;</code> e <strong>um</strong> <code>&lt;body&gt;</code> por documento, e o <code>&lt;head&gt;</code> sempre vem antes do <code>&lt;body&gt;</code>.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 6: ANATOMIA DE UMA TAG -->
+        <section class="content-section" id="anatomia">
+            <span class="section-label">06 · ANATOMIA DE UMA TAG</span>
+            <h1>Desmontando um <span class="highlight">elemento</span> peça por peça.</h1>
+
+            <div class="content-block">
+                <p><strong>Tag</strong> e <strong>elemento</strong> não são a mesma coisa! A <em>tag</em> é a marcação (<code>&lt;p&gt;</code>); o <em>elemento</em> é o conjunto completo: tag de abertura + conteúdo + tag de fechamento.</p>
+
+                <h3>👆 Clique em cada parte do código:</h3>
+                <div class="anatomy" role="group" aria-label="Explorador da anatomia de uma tag">
+                    <div class="anatomy-code">
+                        <button type="button" data-part="abre">&lt;</button><button type="button" data-part="nome">a</button>
+                        <button type="button" data-part="atributo">href</button><button type="button" data-part="igual">=</button><button type="button" data-part="valor">"https://htmlab.dev"</button>
+                        <button type="button" data-part="atributo2">target</button><button type="button" data-part="igual">=</button><button type="button" data-part="valor2">"_blank"</button><button type="button" data-part="fecha-abertura">&gt;</button><button type="button" data-part="conteudo">Visite o HTMLab</button><button type="button" data-part="fechamento">&lt;/a&gt;</button>
+                    </div>
+                    <div class="anatomy-info" aria-live="polite">
+                        <strong>👈 Escolha uma parte</strong>
+                        <p>Clique em qualquer pedaço do código acima para descobrir o que ele significa.</p>
+                    </div>
+                </div>
+
+                <h3>🧩 As peças</h3>
+                <table class="content-table">
+                    <thead><tr><th>Parte</th><th>Exemplo</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tag de abertura</td><td><code>&lt;a ...&gt;</code></td><td>Marca o início do elemento</td></tr>
+                        <tr><td>Nome da tag</td><td><code>a</code></td><td>Define <strong>o que</strong> o elemento é (aqui, um link)</td></tr>
+                        <tr><td>Atributo</td><td><code>href</code></td><td>Informação extra que configura o elemento</td></tr>
+                        <tr><td>Valor do atributo</td><td><code>"https://..."</code></td><td>Configuração do atributo, entre aspas</td></tr>
+                        <tr><td>Conteúdo</td><td><code>Visite o HTMLab</code></td><td>Texto ou outros elementos dentro da tag</td></tr>
+                        <tr><td>Tag de fechamento</td><td><code>&lt;/a&gt;</code></td><td>Mesma tag com <code>/</code>: marca o fim do elemento</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box info">
+                    <strong>📌 Sintaxe:</strong> <code>&lt;nome atributo="valor" outro="valor"&gt;conteúdo&lt;/nome&gt;</code>. Atributos ficam <strong>só na tag de abertura</strong>, separados por espaço, em qualquer ordem.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 7: ELEMENTOS: ANINHAMENTO, VOID, BLOCK E INLINE -->
+        <section class="content-section" id="elementos">
+            <span class="section-label">07 · ELEMENTOS: ANINHAMENTO, VOID E BLOCK × INLINE</span>
+            <h1>Como os elementos se <span class="highlight">encaixam</span>.</h1>
+
+            <div class="content-block">
+                <h3>🪆 Aninhamento (nesting)</h3>
+                <p>Elementos podem ficar dentro de outros, como bonecas russas. A regra de ouro: <strong>o último a abrir é o primeiro a fechar</strong>.</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>✅ Correto</h4>
+                        <pre><code class="code-block">&lt;p&gt;Isso é &lt;strong&gt;muito
+&lt;em&gt;importante&lt;/em&gt;&lt;/strong&gt;!&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="column">
+                        <h4>❌ Errado (tags cruzadas)</h4>
+                        <pre><code class="code-block">&lt;p&gt;Isso é &lt;strong&gt;muito
+&lt;em&gt;importante&lt;/strong&gt;&lt;/em&gt;!&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+
+                <h3>🕳️ Elementos vazios (void)</h3>
+                <p>Alguns elementos <strong>não têm conteúdo</strong>, então não têm tag de fechamento:</p>
+                <pre><code class="code-block">&lt;br&gt;  &lt;hr&gt;  &lt;img&gt;  &lt;input&gt;  &lt;meta&gt;  &lt;link&gt;
+&lt;area&gt;  &lt;base&gt;  &lt;col&gt;  &lt;embed&gt;  &lt;source&gt;  &lt;track&gt;  &lt;wbr&gt;</code></pre>
+                <div class="info-box info">
+                    <strong>📌 E o <code>&lt;br /&gt;</code>?</strong> A barra no final vem do XHTML. Em HTML5 ela é <strong>opcional e ignorada</strong>: <code>&lt;br&gt;</code> e <code>&lt;br /&gt;</code> são idênticos. Mas <code>&lt;div /&gt;</code> <strong>não</strong> fecha a div!
+                </div>
+
+                <h3>🧱 Block × Inline</h3>
+                <p>Por padrão, cada elemento tem um comportamento de exibição:</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>Block (bloco)</h4>
+                        <ul>
+                            <li>Começa em uma <strong>nova linha</strong></li>
+                            <li>Ocupa <strong>toda a largura</strong> disponível</li>
+                            <li><code>div</code>, <code>p</code>, <code>h1</code>–<code>h6</code>, <code>ul</code>, <code>section</code>, <code>form</code>, <code>table</code></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>Inline (em linha)</h4>
+                        <ul>
+                            <li>Fica <strong>na mesma linha</strong> do texto</li>
+                            <li>Ocupa <strong>só o espaço do conteúdo</strong></li>
+                            <li><code>span</code>, <code>a</code>, <code>strong</code>, <code>em</code>, <code>img</code>, <code>code</code>, <code>button</code></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>👀 Resultado Visual:</h3>
+                <div class="preview-box block-inline-demo">
+                    <div class="bi-block">&lt;div&gt; bloco</div>
+                    <p class="bi-block">&lt;p&gt; bloco com <span class="bi-inline">&lt;span&gt; inline</span> e <a class="bi-inline" href="#elementos">&lt;a&gt; inline</a> no meio do texto, <strong class="bi-inline">&lt;strong&gt;</strong> também.</p>
+                    <h4 class="bi-block">&lt;h4&gt; bloco</h4>
+                </div>
+
+                <div class="info-box tip">
+                    <strong>✨ Tags de fechamento opcionais:</strong> a especificação permite omitir <code>&lt;/p&gt;</code>, <code>&lt;/li&gt;</code>, <code>&lt;/td&gt;</code>, <code>&lt;/tr&gt;</code>, <code>&lt;/option&gt;</code> e até <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>! O navegador cria tudo sozinho. Funciona, mas <strong>sempre feche</strong>: fica mais legível e evita surpresas.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 8: ATRIBUTOS -->
+        <section class="content-section" id="atributos">
+            <span class="section-label">08 · ATRIBUTOS</span>
+            <h1>Configurando os elementos com <span class="highlight">atributos</span>.</h1>
+
+            <div class="content-block">
+                <p>Atributos dão <strong>informações extras</strong> a um elemento: para onde um link aponta, qual imagem carregar, o idioma de um texto, etc.</p>
+                <pre><code class="code-block">&lt;img src="gato.jpg" alt="Gato dormindo" width="300"&gt;
+&lt;a href="contato.html" title="Fale conosco"&gt;Contato&lt;/a&gt;</code></pre>
+
+                <h3>📏 Regras de escrita</h3>
+                <ul>
+                    <li>Sempre na <strong>tag de abertura</strong></li>
+                    <li>Formato <code>nome="valor"</code>, separados por espaço</li>
+                    <li>Use <strong>aspas duplas</strong> (padrão); aspas simples também funcionam</li>
+                    <li>Nomes de atributos não diferenciam maiúsculas/minúsculas, mas use <strong>minúsculas</strong></li>
+                    <li>Não repita o mesmo atributo na mesma tag (só o primeiro vale)</li>
+                </ul>
+
+                <h3>✅ Atributos booleanos</h3>
+                <p>Alguns atributos funcionam apenas por <strong>estarem presentes</strong>, sem valor:</p>
+                <pre><code class="code-block">&lt;input type="checkbox" checked&gt;
+&lt;button disabled&gt;Indisponível&lt;/button&gt;
+&lt;video src="aula.mp4" controls autoplay muted loop&gt;&lt;/video&gt;</code></pre>
+                <div class="info-box warning">
+                    <strong>⚠️ Pegadinha:</strong> <code>disabled="false"</code> <strong>continua desabilitado</strong>! Para booleanos, o que importa é a presença do atributo. Para "desligar", remova-o.
+                </div>
+
+                <h3>🌍 Atributos globais (valem para qualquer elemento)</h3>
+                <table class="content-table">
+                    <thead><tr><th>Atributo</th><th>Para que serve</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>id</code></td><td>Identificador <strong>único</strong> na página (CSS, JS, âncoras <code>#id</code>)</td></tr>
+                        <tr><td><code>class</code></td><td>Uma ou mais classes, separadas por espaço, para estilizar com CSS</td></tr>
+                        <tr><td><code>style</code></td><td>CSS direto no elemento (use com moderação)</td></tr>
+                        <tr><td><code>title</code></td><td>Dica que aparece ao passar o mouse</td></tr>
+                        <tr><td><code>lang</code></td><td>Idioma do conteúdo daquele elemento</td></tr>
+                        <tr><td><code>dir</code></td><td>Direção do texto: <code>ltr</code>, <code>rtl</code> (árabe, hebraico) ou <code>auto</code></td></tr>
+                        <tr><td><code>hidden</code></td><td>Esconde o elemento</td></tr>
+                        <tr><td><code>tabindex</code></td><td>Ordem/possibilidade de foco pelo teclado</td></tr>
+                        <tr><td><code>data-*</code></td><td>Dados personalizados: <code>data-preco="29.90"</code></td></tr>
+                        <tr><td><code>contenteditable</code></td><td>Torna o conteúdo editável pelo usuário</td></tr>
+                        <tr><td><code>draggable</code></td><td>Permite arrastar o elemento</td></tr>
+                        <tr><td><code>spellcheck</code></td><td>Liga/desliga o corretor ortográfico</td></tr>
+                        <tr><td><code>translate</code></td><td><code>no</code> impede tradutores automáticos de traduzir (nomes de marcas, código)</td></tr>
+                        <tr><td><code>inert</code></td><td>Torna o elemento e seus filhos não clicáveis e não focáveis</td></tr>
+                        <tr><td><code>popover</code></td><td>Transforma o elemento em um popover nativo</td></tr>
+                        <tr><td><code>accesskey</code></td><td>Atalho de teclado para focar/ativar o elemento</td></tr>
+                        <tr><td><code>role</code> / <code>aria-*</code></td><td>Informações de acessibilidade para tecnologias assistivas</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box info">
+                    <strong>📌 id × class:</strong> <code>id</code> é como um CPF (único); <code>class</code> é como um sobrenome (vários podem ter o mesmo). Um elemento pode ter várias classes: <code>class="btn btn-primary grande"</code>.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 9: TAGS PRINCIPAIS -->
+        <section class="content-section" id="tags-principais">
+            <span class="section-label">09 · TAGS PRINCIPAIS</span>
+            <h1>As tags que você vai usar <span class="highlight">todo dia</span>.</h1>
+
+            <div class="content-block">
+                <p>O HTML tem mais de 100 elementos, mas um grupo pequeno resolve a maior parte das páginas. Cada um será aprofundado nas próximas aulas.</p>
+
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>📰 Títulos e textos</h4>
+                        <p><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> títulos, <code>&lt;p&gt;</code> parágrafo, <code>&lt;strong&gt;</code> importância, <code>&lt;em&gt;</code> ênfase, <code>&lt;br&gt;</code> quebra de linha, <code>&lt;hr&gt;</code> divisão temática, <code>&lt;blockquote&gt;</code> citação, <code>&lt;code&gt;</code> código. <em>(Aula 2)</em></p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>🔗 Links</h4>
+                        <p><code>&lt;a href="..."&gt;</code> para outras páginas, seções (<code>#id</code>), e-mail (<code>mailto:</code>) e telefone (<code>tel:</code>). <em>(Aula 3)</em></p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>🖼️ Mídia</h4>
+                        <p><code>&lt;img&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;picture&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;canvas&gt;</code>. <em>(Aulas 4 e 7)</em></p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>📝 Formulários</h4>
+                        <p><code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>. <em>(Aula 5)</em></p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>📋 Listas</h4>
+                        <p><code>&lt;ul&gt;</code> não ordenada, <code>&lt;ol&gt;</code> ordenada, <code>&lt;li&gt;</code> item, <code>&lt;dl&gt;</code>/<code>&lt;dt&gt;</code>/<code>&lt;dd&gt;</code> definições. <em>(Aula 6)</em></p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>📊 Tabelas</h4>
+                        <p><code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code> linha, <code>&lt;th&gt;</code> cabeçalho, <code>&lt;td&gt;</code> célula, <code>&lt;caption&gt;</code> legenda.</p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>🏛️ Estrutura semântica</h4>
+                        <p><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>. <em>(Aula 8)</em></p>
+                    </div>
+                    <div class="tag-card">
+                        <h4>📦 Genéricas</h4>
+                        <p><code>&lt;div&gt;</code> (bloco) e <code>&lt;span&gt;</code> (inline): caixas sem significado, usadas para agrupar e estilizar quando nenhuma outra tag serve.</p>
+                    </div>
+                </div>
+
+                <h3>🧪 Exemplo com as tags principais</h3>
+                <pre><code class="code-block">&lt;h1&gt;Receita de Bolo&lt;/h1&gt;
+&lt;p&gt;Um bolo &lt;strong&gt;fácil&lt;/strong&gt; e &lt;em&gt;delicioso&lt;/em&gt;.&lt;/p&gt;
+&lt;img src="bolo.jpg" alt="Bolo de chocolate fatiado" width="300"&gt;
+
+&lt;h2&gt;Ingredientes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;2 ovos&lt;/li&gt;
+  &lt;li&gt;1 xícara de açúcar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Veja mais em &lt;a href="https://exemplo.com"&gt;nosso site&lt;/a&gt;.&lt;/p&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 10: O <HEAD> EM DETALHE -->
+        <section class="content-section" id="head">
+            <span class="section-label">10 · O &lt;HEAD&gt; EM DETALHE</span>
+            <h1>O que fica <span class="highlight">escondido</span> no topo da página.</h1>
+
+            <div class="content-block">
+                <p>O <code>&lt;head&gt;</code> não aparece na tela, mas controla <strong>como a página é carregada, exibida, compartilhada e encontrada</strong> no Google.</p>
+
+                <pre><code class="code-block">&lt;head&gt;
+  &lt;!-- Essenciais --&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Bolo de Chocolate | Receitas da Vó&lt;/title&gt;
+
+  &lt;!-- SEO --&gt;
+  &lt;meta name="description" content="Receita de bolo fofinho em 30 minutos."&gt;
+  &lt;link rel="canonical" href="https://receitas.com/bolo"&gt;
+
+  &lt;!-- Ícones e cor do navegador mobile --&gt;
+  &lt;link rel="icon" href="favicon.ico"&gt;
+  &lt;link rel="apple-touch-icon" href="icone-180.png"&gt;
+  &lt;meta name="theme-color" content="#ff6b35"&gt;
+
+  &lt;!-- Compartilhamento (WhatsApp, LinkedIn, Facebook) --&gt;
+  &lt;meta property="og:title" content="Bolo de Chocolate"&gt;
+  &lt;meta property="og:description" content="Fofinho e fácil!"&gt;
+  &lt;meta property="og:image" content="https://receitas.com/bolo.jpg"&gt;
+
+  &lt;!-- CSS e JavaScript --&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;script src="script.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+
+                <h3>📋 Elementos permitidos no head</h3>
+                <table class="content-table">
+                    <thead><tr><th>Elemento</th><th>Uso</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>&lt;title&gt;</code></td><td>Título da aba (obrigatório, único)</td></tr>
+                        <tr><td><code>&lt;meta&gt;</code></td><td>Metadados: charset, viewport, description, robots, theme-color, Open Graph</td></tr>
+                        <tr><td><code>&lt;link&gt;</code></td><td>Recursos externos: CSS, favicon, fontes, canonical, preload</td></tr>
+                        <tr><td><code>&lt;style&gt;</code></td><td>CSS escrito no próprio documento</td></tr>
+                        <tr><td><code>&lt;script&gt;</code></td><td>JavaScript (de preferência com <code>defer</code>)</td></tr>
+                        <tr><td><code>&lt;base&gt;</code></td><td>URL base para todos os links relativos da página</td></tr>
+                        <tr><td><code>&lt;noscript&gt;</code></td><td>Conteúdo alternativo se o JavaScript estiver desativado</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>⚡ Dicas de performance no head</h3>
+                <pre><code class="code-block">&lt;!-- Conecta antecipadamente a um domínio externo --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+
+&lt;!-- Baixa com prioridade um recurso que será usado logo --&gt;
+&lt;link rel="preload" href="hero.webp" as="image"&gt;
+
+&lt;!-- Baixa em segundo plano a provável próxima página --&gt;
+&lt;link rel="prefetch" href="aula2/index.html"&gt;</code></pre>
+
+                <div class="info-box tip">
+                    <strong>✨ Dica:</strong> o <code>&lt;meta charset&gt;</code> deve estar nos <strong>primeiros 1024 bytes</strong> do documento, por isso ele é sempre a primeira linha do head.
+                </div>
+                <div class="info-box info">
+                    <strong>📌 Teste:</strong> cole o link do seu site no WhatsApp. O título, a descrição e a imagem que aparecem vêm das tags <code>og:*</code>!
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 11: COMENTÁRIOS, ESPAÇOS E ENTIDADES -->
+        <section class="content-section" id="comentarios-entidades">
+            <span class="section-label">11 · COMENTÁRIOS, ESPAÇOS E ENTIDADES</span>
+            <h1>Detalhes que <span class="highlight">pegam</span> todo iniciante.</h1>
+
+            <div class="content-block">
+                <h3>💬 Comentários</h3>
+                <p>Textos ignorados pelo navegador, úteis para explicar o código ou desativar trechos temporariamente.</p>
+                <pre><code class="code-block">&lt;!-- Isto é um comentário --&gt;
+
+&lt;!--
+  Comentário de
+  várias linhas
+--&gt;
+
+&lt;!-- &lt;p&gt;Parágrafo desativado&lt;/p&gt; --&gt;</code></pre>
+                <div class="info-box warning">
+                    <strong>⚠️ Cuidado:</strong> comentários <strong>são visíveis</strong> para qualquer pessoa no "Exibir código-fonte". Nunca escreva senhas, chaves ou informações internas neles. Atalho no VS Code: <kbd>Ctrl</kbd>+<kbd>/</kbd>.
+                </div>
+
+                <h3>␣ Espaços em branco são "colapsados"</h3>
+                <p>O navegador transforma <strong>vários espaços, tabs e quebras de linha em um único espaço</strong>:</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>Código</h4>
+                        <pre><code class="code-block">&lt;p&gt;Olá        mundo
+           do
+
+
+    HTML!&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="column">
+                        <h4>Resultado</h4>
+                        <p class="preview-inline">Olá        mundo
+           do
+
+
+    HTML!</p>
+                    </div>
+                </div>
+                <p>Para quebrar linha use <code>&lt;br&gt;</code>, para parágrafos use <code>&lt;p&gt;</code>, e para manter a formatação exata use <code>&lt;pre&gt;</code>. Espaçamento visual é trabalho do <strong>CSS</strong>.</p>
+
+                <h3>🔣 Entidades HTML (caracteres especiais)</h3>
+                <p>Alguns caracteres têm significado no HTML. Para exibi-los como texto, use <strong>entidades</strong>:</p>
+                <table class="content-table">
+                    <thead><tr><th>Caractere</th><th>Entidade</th><th>Quando usar</th></tr></thead>
+                    <tbody>
+                        <tr><td>&lt;</td><td><code>&amp;lt;</code></td><td>Mostrar uma tag como texto</td></tr>
+                        <tr><td>&gt;</td><td><code>&amp;gt;</code></td><td>Mostrar uma tag como texto</td></tr>
+                        <tr><td>&amp;</td><td><code>&amp;amp;</code></td><td>O "e comercial" em textos e URLs</td></tr>
+                        <tr><td>"</td><td><code>&amp;quot;</code></td><td>Aspas dentro de um valor de atributo</td></tr>
+                        <tr><td>(espaço)</td><td><code>&amp;nbsp;</code></td><td>Espaço que não quebra linha: <code>R$&amp;nbsp;10</code></td></tr>
+                        <tr><td>©</td><td><code>&amp;copy;</code></td><td>Direitos autorais</td></tr>
+                        <tr><td>®</td><td><code>&amp;reg;</code></td><td>Marca registrada</td></tr>
+                        <tr><td>→</td><td><code>&amp;rarr;</code></td><td>Setas</td></tr>
+                        <tr><td>—</td><td><code>&amp;mdash;</code></td><td>Travessão</td></tr>
+                        <tr><td>❤</td><td><code>&amp;#10084;</code> ou <code>&amp;#x2764;</code></td><td>Qualquer caractere pelo código Unicode</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>👀 Teste: digite HTML e veja como escrevê-lo como texto</h3>
+                <div class="preview-box">
+                    <label for="entity-input" class="demo-label">Seu texto:</label>
+                    <input id="entity-input" class="demo-input" value="&lt;p&gt;Tom &amp; Jerry&lt;/p&gt;" spellcheck="false">
+                    <p class="demo-label">Versão com entidades:</p>
+                    <pre class="demo-output-code" id="entity-output" aria-live="polite"></pre>
+                </div>
+
+                <div class="info-box tip">
+                    <strong>✨ Bônus:</strong> o HTML não diferencia maiúsculas de minúsculas nas tags: <code>&lt;P&gt;</code> = <code>&lt;p&gt;</code>. Mas a convenção moderna é <strong>tudo em minúsculas</strong>. Com <code>charset="UTF-8"</code>, você pode digitar <code>©</code>, <code>→</code> e emojis direto, sem entidades: só <code>&lt;</code> e <code>&amp;</code> realmente precisam ser escapados.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 12: SEMÂNTICA E ACESSIBILIDADE -->
+        <section class="content-section" id="semantica">
+            <span class="section-label">12 · SEMÂNTICA E ACESSIBILIDADE</span>
+            <h1>HTML descreve o <span class="highlight">significado</span>, não a aparência.</h1>
+
+            <div class="content-block">
+                <p><strong>Semântica</strong> é usar cada tag pelo que ela <em>significa</em>. Um <code>&lt;h1&gt;</code> não serve para "deixar o texto grande"; serve para dizer "este é o título principal". O tamanho é trabalho do CSS.</p>
+
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>❌ Sem semântica ("div-sopa")</h4>
+                        <pre><code class="code-block">&lt;div class="topo"&gt;
+  &lt;div class="titulo"&gt;Meu Blog&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="post"&gt;
+  &lt;div class="negrito"&gt;Olá!&lt;/div&gt;
+  &lt;div onclick="ir()"&gt;Ler mais&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="column">
+                        <h4>✅ Semântico</h4>
+                        <pre><code class="code-block">&lt;header&gt;
+  &lt;h1&gt;Meu Blog&lt;/h1&gt;
+&lt;/header&gt;
+&lt;article&gt;
+  &lt;h2&gt;Olá!&lt;/h2&gt;
+  &lt;a href="post.html"&gt;Ler mais&lt;/a&gt;
+&lt;/article&gt;</code></pre>
+                    </div>
+                </div>
+
+                <h3>🏆 Por que a semântica importa?</h3>
+                <ul>
+                    <li><strong>Acessibilidade:</strong> leitores de tela anunciam "título nível 1", "link", "navegação", e permitem pular direto para eles</li>
+                    <li><strong>SEO:</strong> o Google entende melhor a hierarquia e o assunto da página</li>
+                    <li><strong>Funcionalidade grátis:</strong> <code>&lt;button&gt;</code> e <code>&lt;a&gt;</code> já funcionam com teclado (Tab, Enter); uma <code>&lt;div&gt;</code> não</li>
+                    <li><strong>Manutenção:</strong> o código fica autoexplicativo para outras pessoas (e para você no futuro)</li>
+                    <li><strong>Modo leitura:</strong> navegadores e apps conseguem extrair o conteúdo principal</li>
+                </ul>
+
+                <div class="info-box info">
+                    <strong>📌 Regra prática:</strong> antes de usar <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code>, pergunte: "existe uma tag que descreve isso?". Se existir, use-a. A Aula 8 é inteira sobre HTML semântico!
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Títulos:</strong> use <strong>um</strong> <code>&lt;h1&gt;</code> por página e não pule níveis (<code>h1</code> → <code>h2</code> → <code>h3</code>). Escolha o nível pela hierarquia, nunca pelo tamanho da fonte.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 13: LABORATÓRIO AO VIVO -->
+        <section class="content-section" id="playground">
+            <span class="section-label">13 · LABORATÓRIO AO VIVO</span>
+            <h1>Escreva HTML e veja a <span class="highlight">mágica</span> acontecer.</h1>
+
+            <div class="content-block">
+                <p>Edite o código abaixo: o resultado e a <strong>árvore DOM</strong> (como o navegador enxerga seu HTML) se atualizam enquanto você digita.</p>
+
+                <div class="playground">
+                    <div class="playground-pane">
+                        <div class="playground-bar">
+                            <label for="pg-code">📝 Código HTML</label>
+                            <div class="playground-actions">
+                                <button type="button" class="pg-btn" data-exemplo="basico">Básico</button>
+                                <button type="button" class="pg-btn" data-exemplo="lista">Lista</button>
+                                <button type="button" class="pg-btn" data-exemplo="quebrado">HTML quebrado</button>
+                            </div>
+                        </div>
+                        <textarea id="pg-code" spellcheck="false" aria-describedby="pg-dica"></textarea>
+                        <small id="pg-dica">Dica: o resultado roda em uma área isolada (sandbox), sem acesso à página.</small>
+                    </div>
+                    <div class="playground-pane">
+                        <div class="playground-bar"><span>👀 Resultado</span></div>
+                        <iframe id="pg-result" title="Resultado do código HTML" sandbox=""></iframe>
+                    </div>
+                </div>
+
+                <h3>🌳 Árvore DOM gerada:</h3>
+                <pre class="dom-tree" id="pg-dom" aria-live="polite"></pre>
+
+                <div class="info-box tip">
+                    <strong>✨ Repare:</strong> clique em "HTML quebrado". Mesmo sem <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>, com tags sem fechar e cruzadas, o navegador <strong>conserta tudo</strong> e monta uma árvore válida. Veja na seção "Como o navegador interpreta o HTML" por que isso acontece.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 14: COMUNICAÇÃO CLIENT X SERVER -->
         <section class="content-section" id="client-server">
-            <span class="section-label">04 · COMUNICAÇÃO CLIENT X SERVER</span>
+            <span class="section-label">14 · COMUNICAÇÃO CLIENT X SERVER</span>
             <h1>Cliente e servidor: <span class="highlight">duas partes que conversam</span>.</h1>
             
             <div class="content-block">
@@ -270,9 +832,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 5: PROTOCOLOS -->
+        <!-- SEÇÃO 15: O QUE SÃO PROTOCOLOS? -->
         <section class="content-section" id="protocolos">
-            <span class="section-label">05 · O QUE SÃO PROTOCOLOS?</span>
+            <span class="section-label">15 · O QUE SÃO PROTOCOLOS?</span>
             <h1>As regras que fazem a <span class="highlight">comunicação funcionar</span>.</h1>
             
             <div class="content-block">
@@ -327,9 +889,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 6: REQUISIÇÃO -->
+        <!-- SEÇÃO 16: REQUISIÇÃO (REQUEST) -->
         <section class="content-section" id="requisicao">
-            <span class="section-label">06 · REQUISIÇÃO</span>
+            <span class="section-label">16 · REQUISIÇÃO</span>
             <h1>A mensagem que o <span class="highlight">cliente envia</span>.</h1>
             
             <div class="content-block">
@@ -377,9 +939,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 7: RESPOSTA -->
+        <!-- SEÇÃO 17: RESPOSTA (RESPONSE) -->
         <section class="content-section" id="resposta">
-            <span class="section-label">07 · RESPOSTA</span>
+            <span class="section-label">17 · RESPOSTA</span>
             <h1>A mensagem que o <span class="highlight">servidor retorna</span>.</h1>
             
             <div class="content-block">
@@ -432,9 +994,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 8: FORMATOS DE DADOS -->
+        <!-- SEÇÃO 18: FORMATOS DE DADOS -->
         <section class="content-section" id="formatos">
-            <span class="section-label">08 · FORMATOS DE DADOS</span>
+            <span class="section-label">18 · FORMATOS DE DADOS</span>
             <h1><span class="highlight">JSON, XML</span> e outras linguagens de dados.</h1>
             
             <div class="content-block">
@@ -456,9 +1018,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 9: APIs -->
+        <!-- SEÇÃO 19: APIS (APPLICATION PROGRAMMING INTERFACE) -->
         <section class="content-section" id="apis">
-            <span class="section-label">09 · APIS</span>
+            <span class="section-label">19 · APIS</span>
             <h1>O garçom que leva o <span class="highlight">pedido até a cozinha</span>.</h1>
             
             <div class="content-block">
@@ -504,9 +1066,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 10: NAVEGADORES -->
+        <!-- SEÇÃO 20: NAVEGADORES -->
         <section class="content-section" id="navegadores">
-            <span class="section-label">10 · NAVEGADORES</span>
+            <span class="section-label">20 · NAVEGADORES</span>
             <h1>Os programas que <span class="highlight">interpretam o HTML</span>.</h1>
             
             <div class="content-block">
@@ -543,9 +1105,92 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 11: APLICAÇÕES WEB -->
+        <!-- SEÇÃO 21: COMO O NAVEGADOR INTERPRETA O HTML -->
+        <section class="content-section" id="interpretacao">
+            <span class="section-label">21 · COMO O NAVEGADOR INTERPRETA O HTML</span>
+            <h1>Do texto à <span class="highlight">página na tela</span>.</h1>
+
+            <div class="content-block">
+                <p>O arquivo HTML é apenas <strong>texto</strong>. Entre receber esse texto e mostrar pixels na tela, o navegador passa por um processo chamado <strong>Critical Rendering Path</strong> (caminho crítico de renderização).</p>
+
+                <h3>🏭 As etapas (clique para ver cada uma)</h3>
+                <div class="pipeline" role="group" aria-label="Etapas de renderização">
+                    <button type="button" class="pipeline-step" data-step="0" aria-pressed="true">1. Bytes</button>
+                    <button type="button" class="pipeline-step" data-step="1" aria-pressed="false">2. Tokens</button>
+                    <button type="button" class="pipeline-step" data-step="2" aria-pressed="false">3. DOM</button>
+                    <button type="button" class="pipeline-step" data-step="3" aria-pressed="false">4. CSSOM</button>
+                    <button type="button" class="pipeline-step" data-step="4" aria-pressed="false">5. Render Tree</button>
+                    <button type="button" class="pipeline-step" data-step="5" aria-pressed="false">6. Layout</button>
+                    <button type="button" class="pipeline-step" data-step="6" aria-pressed="false">7. Paint</button>
+                    <button type="button" class="pipeline-step" data-step="7" aria-pressed="false">8. Composite</button>
+                </div>
+                <div class="pipeline-info" id="pipeline-info" aria-live="polite"></div>
+
+                <h3>📜 Resumo das etapas</h3>
+                <table class="content-table">
+                    <thead><tr><th>Etapa</th><th>O que acontece</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>1. Bytes → caracteres</strong></td><td>O navegador recebe bytes e os converte em texto usando o <code>charset</code> (UTF-8)</td></tr>
+                        <tr><td><strong>2. Tokenização</strong></td><td>O texto é quebrado em <em>tokens</em>: "tag de abertura p", "texto Olá", "tag de fechamento p"</td></tr>
+                        <tr><td><strong>3. DOM</strong></td><td>Os tokens viram <strong>nós</strong> organizados em árvore: o <em>Document Object Model</em></td></tr>
+                        <tr><td><strong>4. CSSOM</strong></td><td>O CSS também vira uma árvore de regras de estilo</td></tr>
+                        <tr><td><strong>5. Render Tree</strong></td><td>DOM + CSSOM: só o que será <strong>visível</strong> (sem <code>head</code>, <code>display:none</code> etc.)</td></tr>
+                        <tr><td><strong>6. Layout (reflow)</strong></td><td>Calcula posição e tamanho exato de cada caixa na tela</td></tr>
+                        <tr><td><strong>7. Paint</strong></td><td>Desenha textos, cores, bordas, imagens e sombras em camadas</td></tr>
+                        <tr><td><strong>8. Composite</strong></td><td>Junta as camadas na ordem certa e exibe na tela (geralmente com ajuda da GPU)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>🧠 O DOM não é o seu código-fonte</h3>
+                <p>O <strong>DOM</strong> é a representação viva da página na memória. O JavaScript lê e altera o DOM, não o arquivo. Por isso:</p>
+                <ul>
+                    <li><strong>Exibir código-fonte</strong> (<kbd>Ctrl</kbd>+<kbd>U</kbd>) mostra o HTML <em>original</em> que veio do servidor</li>
+                    <li><strong>Inspecionar elemento</strong> (<kbd>F12</kbd>) mostra o DOM <em>atual</em>, já corrigido e modificado pelo JavaScript</li>
+                </ul>
+
+                <h3>⏸️ Scripts bloqueiam a leitura do HTML</h3>
+                <p>Quando o parser encontra um <code>&lt;script&gt;</code> comum, ele <strong>para</strong>, baixa e executa o script, e só depois continua. Use <code>defer</code> ou <code>async</code>:</p>
+                <table class="content-table">
+                    <thead><tr><th>Forma</th><th>Download</th><th>Execução</th><th>Uso ideal</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>&lt;script src&gt;</code></td><td>Bloqueia o HTML</td><td>Imediata, bloqueando</td><td>Evite no <code>head</code></td></tr>
+                        <tr><td><code>&lt;script defer&gt;</code></td><td>Em paralelo</td><td>Após o HTML terminar, <strong>na ordem</strong></td><td>✅ Scripts do seu site</td></tr>
+                        <tr><td><code>&lt;script async&gt;</code></td><td>Em paralelo</td><td>Assim que baixar, <strong>fora de ordem</strong></td><td>Analytics, anúncios</td></tr>
+                        <tr><td><code>&lt;script type="module"&gt;</code></td><td>Em paralelo</td><td>Como <code>defer</code> por padrão</td><td>JavaScript moderno com <code>import</code></td></tr>
+                    </tbody>
+                </table>
+
+                <h3>🩹 O navegador perdoa (quase) tudo</h3>
+                <p>Diferente de uma linguagem de programação, HTML inválido <strong>não gera erro</strong>. A especificação HTML5 define exatamente como o navegador deve <strong>consertar</strong> o código quebrado, para que todos os navegadores cheguem ao mesmo resultado.</p>
+                <div class="preview-box">
+                    <label for="fix-input" class="demo-label">Digite HTML quebrado:</label>
+                    <textarea id="fix-input" class="demo-input" rows="3" spellcheck="false">&lt;p&gt;Parágrafo sem fechar
+&lt;p&gt;Texto &lt;b&gt;negrito &lt;i&gt;cruzado&lt;/b&gt; itálico&lt;/i&gt;
+&lt;p&gt;Uma &lt;div&gt;div&lt;/div&gt; dentro de p</textarea>
+                    <p class="demo-label">Como o navegador corrigiu (DOM final):</p>
+                    <pre class="demo-output-code" id="fix-output" aria-live="polite"></pre>
+                </div>
+                <div class="info-box warning">
+                    <strong>⚠️ Por isso valide seu HTML:</strong> o conserto automático pode gerar uma estrutura diferente da que você imaginou (repare como o <code>&lt;div&gt;</code> fecha o <code>&lt;p&gt;</code>!). Use o <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Validator</a>.
+                </div>
+
+                <h3>🦖 Quirks Mode: o que acontece sem o DOCTYPE</h3>
+                <p>Sem <code>&lt;!DOCTYPE html&gt;</code>, o navegador entra no <strong>modo de compatibilidade (quirks mode)</strong> e imita bugs de navegadores dos anos 90, para não quebrar sites antigos. Tamanhos de caixas, tabelas e alinhamentos podem mudar.</p>
+                <pre><code class="code-block">// Descubra o modo no console do navegador:
+document.compatMode
+// "CSS1Compat"  → modo padrão ✅
+// "BackCompat"  → quirks mode ⚠️</code></pre>
+                <p>Esta página está em: <code id="compat-mode">...</code></p>
+
+                <div class="info-box tip">
+                    <strong>✨ Motores de renderização:</strong> quem faz todo esse trabalho é o <em>engine</em>: <strong>Blink</strong> (Chrome, Edge, Opera, Brave), <strong>Gecko</strong> (Firefox) e <strong>WebKit</strong> (Safari e, na maioria dos países, todos os navegadores do iPhone).
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 22: APLICAÇÕES WEB -->
         <section class="content-section" id="apps-web">
-            <span class="section-label">11 · APLICAÇÕES WEB</span>
+            <span class="section-label">22 · APLICAÇÕES WEB</span>
             <h1>Sistemas que funcionam no <span class="highlight">navegador</span>.</h1>
             
             <div class="content-block">
@@ -590,9 +1235,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 12: DISPOSITIVOS MÓVEIS -->
+        <!-- SEÇÃO 23: DISPOSITIVOS MÓVEIS -->
         <section class="content-section" id="mobile">
-            <span class="section-label">12 · DISPOSITIVOS MÓVEIS</span>
+            <span class="section-label">23 · DISPOSITIVOS MÓVEIS</span>
             <h1>A computação que cabe na <span class="highlight">palma da mão</span>.</h1>
             
             <div class="content-block">
@@ -640,9 +1285,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 13: CLIENT VS SERVER (TABELA COMPARATIVA) -->
+        <!-- SEÇÃO 24: CLIENT VS SERVER (TABELA) -->
         <section class="content-section" id="tabela-client-server">
-            <span class="section-label">13 · CLIENT VS SERVER</span>
+            <span class="section-label">24 · CLIENT VS SERVER</span>
             <h1>Comparação visual entre <span class="highlight">Cliente e Servidor</span>.</h1>
             
             <div class="content-block">
@@ -685,9 +1330,189 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 13: CURIOSIDADES E DICAS -->
+        <!-- SEÇÃO 25: HACKS E RECURSOS AVANÇADOS -->
+        <section class="content-section" id="hacks">
+            <span class="section-label">25 · HACKS E RECURSOS AVANÇADOS</span>
+            <h1>Truques que fazem você parecer <span class="highlight">sênior</span>.</h1>
+
+            <div class="content-block">
+                <h3>🎮 Teste ao vivo</h3>
+                <div class="preview-box hacks-demo">
+                    <details>
+                        <summary>📂 &lt;details&gt; + &lt;summary&gt;: clique para abrir (acordeão sem JavaScript!)</summary>
+                        <p>Conteúdo escondido que abre e fecha nativamente. Adicione <code>open</code> para começar aberto, ou o mesmo <code>name</code> em vários para só um abrir por vez.</p>
+                    </details>
+
+                    <div class="demo-row">
+                        <button type="button" class="demo-btn" popovertarget="hack-popover">💬 Abrir popover</button>
+                        <button type="button" class="demo-btn" id="hack-dialog-open">🪟 Abrir &lt;dialog&gt;</button>
+                        <button type="button" class="demo-btn" id="hack-edit" aria-pressed="false">✏️ Editar esta caixa</button>
+                    </div>
+
+                    <div id="hack-popover" popover>
+                        <p><strong>Popover nativo!</strong> Fecha com <kbd>Esc</kbd> ou clicando fora. Zero JavaScript: <code>&lt;button popovertarget="id"&gt;</code> + <code>&lt;div id="id" popover&gt;</code>.</p>
+                    </div>
+
+                    <dialog id="hack-dialog" aria-labelledby="hack-dialog-title">
+                        <h4 id="hack-dialog-title">Eu sou um &lt;dialog&gt; 👋</h4>
+                        <p>Modal nativo: escurece o fundo, prende o foco e fecha com <kbd>Esc</kbd>.</p>
+                        <form method="dialog"><button class="demo-btn">Fechar</button></form>
+                    </dialog>
+
+                    <div class="editable-box" id="hack-editable">Clique em "Editar esta caixa" e depois digite aqui. Isso é o atributo <code>contenteditable</code>.</div>
+                </div>
+
+                <div class="tags-grid">
+                    <div class="tag-card">
+                        <h4>1. Edite qualquer site</h4>
+                        <p>Abra o console (<kbd>F12</kbd>) em qualquer site e digite isto. Agora a página inteira é editável (só para você, ninguém mais vê!).</p>
+                        <pre><code class="code-block">document.designMode = "on"</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>2. Ver o código de qualquer página</h4>
+                        <p>Digite na barra de endereços, ou use <kbd>Ctrl</kbd>+<kbd>U</kbd>:</p>
+                        <pre><code class="code-block">view-source:https://google.com</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>3. Raio-X do layout</h4>
+                        <p>Adicione este CSS para ver a caixa de todos os elementos. Ótimo para entender block × inline!</p>
+                        <pre><code class="code-block">* { outline: 1px solid red; }</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>4. Crie suas próprias tags</h4>
+                        <p>Tags com hífen são válidas como <strong>Custom Elements</strong>. Tags desconhecidas sem hífen são ignoradas e viram elementos inline.</p>
+                        <pre><code class="code-block">&lt;cartao-perfil nome="Ana"&gt;&lt;/cartao-perfil&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>5. Dados personalizados com data-*</h4>
+                        <p>Guarde informações no HTML e leia com JavaScript via <code>dataset</code>.</p>
+                        <pre><code class="code-block">&lt;button data-produto-id="42"&gt;Comprar&lt;/button&gt;
+
+botao.dataset.produtoId // "42"</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>6. &lt;template&gt;: HTML que não renderiza</h4>
+                        <p>Conteúdo guardado para ser clonado pelo JavaScript depois. Não aparece, não carrega imagens, não roda scripts.</p>
+                        <pre><code class="code-block">&lt;template id="item"&gt;
+  &lt;li class="item"&gt;&lt;/li&gt;
+&lt;/template&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>7. Conteúdo escondido que o Ctrl+F encontra</h4>
+                        <p>Com <code>until-found</code>, o navegador revela o elemento quando o usuário pesquisa um texto dentro dele.</p>
+                        <pre><code class="code-block">&lt;div hidden="until-found"&gt;Resposta secreta&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>8. Desativar uma área inteira</h4>
+                        <p><code>inert</code> impede cliques, foco e leitura por tecnologias assistivas em tudo que está dentro.</p>
+                        <pre><code class="code-block">&lt;main inert&gt; ...fundo atrás de um modal... &lt;/main&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>9. Quebrar palavras gigantes</h4>
+                        <p><code>&lt;wbr&gt;</code> sugere onde quebrar; <code>&amp;shy;</code> quebra com hífen.</p>
+                        <pre><code class="code-block">super&lt;wbr&gt;califragilistic&lt;wbr&gt;expialidocious
+pneumo&amp;shy;ultra&amp;shy;microscópico</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>10. Todos os links em nova aba</h4>
+                        <p>O <code>&lt;base&gt;</code> no head define padrões para todos os links e caminhos da página.</p>
+                        <pre><code class="code-block">&lt;base href="https://meusite.com/" target="_blank"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>11. Redirecionar sem JavaScript</h4>
+                        <p>Redireciona após 5 segundos (prefira redirecionar no servidor quando possível).</p>
+                        <pre><code class="code-block">&lt;meta http-equiv="refresh"
+      content="5; url=https://novo-site.com"&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>12. Impedir tradução automática</h4>
+                        <p>Evita que o Google Tradutor transforme "Apple" em "Maçã" ou traduza seu código.</p>
+                        <pre><code class="code-block">&lt;span translate="no"&gt;HTMLab&lt;/span&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>13. Link que baixa o arquivo</h4>
+                        <p>Em vez de abrir, o navegador faz o download (mesma origem) com o nome escolhido.</p>
+                        <pre><code class="code-block">&lt;a href="cv.pdf" download="Curriculo-Ana.pdf"&gt;Baixar&lt;/a&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>14. $0 no DevTools</h4>
+                        <p>Selecione um elemento na aba Elements e digite <code>$0</code> no console para manipulá-lo direto.</p>
+                        <pre><code class="code-block">$0.textContent = "Mudei!"
+$0.style.background = "gold"</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>15. Tags pouco conhecidas</h4>
+                        <p><code>&lt;mark&gt;</code> destaque, <code>&lt;kbd&gt;</code> tecla, <code>&lt;abbr title&gt;</code> abreviação, <code>&lt;time datetime&gt;</code> data legível por máquina, <code>&lt;small&gt;</code> letras miúdas, <code>&lt;sup&gt;</code>/<code>&lt;sub&gt;</code> expoente e índice.</p>
+                        <pre><code class="code-block">H&lt;sub&gt;2&lt;/sub&gt;O · E = mc&lt;sup&gt;2&lt;/sup&gt;
+&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></pre>
+                    </div>
+                    <div class="tag-card">
+                        <h4>16. Emmet: escreva HTML 10× mais rápido</h4>
+                        <p>No VS Code, digite a abreviação e pressione <kbd>Tab</kbd>:</p>
+                        <pre><code class="code-block">!                    → estrutura completa
+ul&gt;li.item*3         → lista com 3 itens
+nav&gt;a[href=#]{Link}*4 → menu com 4 links
+p&gt;lorem10           → texto de 10 palavras</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 26: ERROS COMUNS E BOAS PRÁTICAS -->
+        <section class="content-section" id="erros-comuns">
+            <span class="section-label">26 · ERROS COMUNS E BOAS PRÁTICAS</span>
+            <h1>Escrevendo HTML <span class="highlight">profissional</span>.</h1>
+
+            <div class="content-block">
+                <h3>🐛 Os erros mais comuns de iniciantes</h3>
+                <table class="content-table">
+                    <thead><tr><th>❌ Erro</th><th>✅ Correção</th></tr></thead>
+                    <tbody>
+                        <tr><td>Esquecer o <code>&lt;!DOCTYPE html&gt;</code></td><td>Sempre a primeira linha do arquivo</td></tr>
+                        <tr><td>Esquecer <code>&lt;meta charset="UTF-8"&gt;</code> (acentos quebrados)</td><td>Primeira linha do <code>&lt;head&gt;</code></td></tr>
+                        <tr><td>Tags cruzadas: <code>&lt;b&gt;&lt;i&gt;texto&lt;/b&gt;&lt;/i&gt;</code></td><td>Feche na ordem inversa: <code>&lt;b&gt;&lt;i&gt;texto&lt;/i&gt;&lt;/b&gt;</code></td></tr>
+                        <tr><td>Esquecer de fechar tags</td><td>Use a indentação para enxergar a estrutura</td></tr>
+                        <tr><td>Repetir o mesmo <code>id</code></td><td><code>id</code> é único; para repetir use <code>class</code></td></tr>
+                        <tr><td>Conteúdo dentro do <code>&lt;head&gt;</code></td><td>Tudo que é visível vai no <code>&lt;body&gt;</code></td></tr>
+                        <tr><td><code>&lt;div&gt;</code> dentro de <code>&lt;p&gt;</code></td><td><code>&lt;p&gt;</code> só aceita conteúdo inline</td></tr>
+                        <tr><td>Usar <code>&lt;br&gt;&lt;br&gt;&lt;br&gt;</code> para espaçar</td><td>Use parágrafos e <code>margin</code> no CSS</td></tr>
+                        <tr><td>Usar <code>&lt;h1&gt;</code> para "deixar grande"</td><td>Escolha o título pela hierarquia; tamanho é CSS</td></tr>
+                        <tr><td><code>&lt;img&gt;</code> sem <code>alt</code></td><td>Sempre descreva a imagem (ou <code>alt=""</code> se decorativa)</td></tr>
+                        <tr><td>Espaços e acentos em nomes de arquivo</td><td><code>minha-foto.jpg</code>, nunca <code>Minha Foto.JPG</code></td></tr>
+                        <tr><td>Caminho absoluto do seu PC: <code>C:\Users\...</code></td><td>Use caminhos relativos: <code>img/foto.jpg</code></td></tr>
+                        <tr><td>Atributos de estilo antigos (<code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>bgcolor</code>)</td><td>Foram removidos do HTML5: use CSS</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>✨ Boas práticas</h3>
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>📐 Código</h4>
+                        <ul>
+                            <li>Tags e atributos em <strong>minúsculas</strong></li>
+                            <li>Valores de atributos sempre <strong>entre aspas</strong></li>
+                            <li><strong>Indente</strong> os elementos filhos (2 ou 4 espaços)</li>
+                            <li>Separe estrutura (HTML), estilo (CSS) e comportamento (JS) em arquivos</li>
+                            <li>Comente blocos grandes, não o óbvio</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>🌍 Qualidade</h4>
+                        <ul>
+                            <li>Sempre <code>lang</code>, <code>charset</code>, <code>viewport</code> e <code>title</code></li>
+                            <li>Prefira tags semânticas a <code>div</code>s</li>
+                            <li>Valide no <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Validator</a></li>
+                            <li>Teste em mais de um navegador e no celular</li>
+                            <li>Navegue pela página usando só o teclado</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 27: CURIOSIDADES E DICAS -->
         <section class="content-section" id="curiosidades">
-            <span class="section-label">14 · CURIOSIDADES E DICAS</span>
+            <span class="section-label">27 · CURIOSIDADES E DICAS</span>
             <h1><span class="highlight">Fatos interessantes</span> sobre HTML.</h1>
             
             <div class="content-block">
@@ -710,12 +1535,32 @@ Cliente ← (HTTP) ← Servidor</code></pre>
                 <div class="info-box info">
                     <strong>📌 Dica 5:</strong> O HTML evolui constantemente. Novas tags e funcionalidades são adicionadas regularmente. Acompanhe a documentação oficial!
                 </div>
+
+                <div class="info-box tip">
+                    <strong>💡 Dica 6:</strong> O primeiro site da história ainda está no ar: <a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank" rel="noopener">info.cern.ch</a>. Inspecione o código: HTML de 1991 ainda funciona nos navegadores atuais!
+                </div>
+
+                <div class="info-box info">
+                    <strong>📌 Dica 7:</strong> Não existe mais "HTML6". Desde 2019 o HTML é um <strong>Living Standard</strong> (padrão vivo) mantido pelo WHATWG, atualizado continuamente, sem números de versão.
+                </div>
+
+                <div class="info-box example">
+                    <strong>🎯 Dica 8:</strong> O HTML tem cerca de <strong>110 elementos</strong>, mas a maioria dos sites usa menos de 30. Domine os principais e consulte o MDN para o resto.
+                </div>
+
+                <div class="info-box tip">
+                    <strong>💡 Dica 9:</strong> "Hipertexto" é texto com links para outros textos. O "H" de HTML e de HTTP (HyperText Transfer Protocol) vem da mesma ideia: a web é uma rede de documentos ligados.
+                </div>
+
+                <div class="info-box info">
+                    <strong>📌 Dica 10:</strong> E-mails em HTML ainda usam técnicas dos anos 2000 (tabelas para layout e estilos inline), porque os clientes de e-mail suportam bem menos recursos que os navegadores.
+                </div>
             </div>
         </section>
 
-        <!-- SEÇÃO 15: RECURSOS EXTERNOS -->
+        <!-- SEÇÃO 28: RECURSOS EXTERNOS -->
         <section class="content-section" id="recursos">
-            <span class="section-label">15 · RECURSOS EXTERNOS</span>
+            <span class="section-label">28 · RECURSOS EXTERNOS</span>
             <h1>Documentação e ferramentas <span class="highlight">úteis</span> para estudar HTML.</h1>
             
             <div class="content-block">
@@ -742,9 +1587,9 @@ Cliente ← (HTTP) ← Servidor</code></pre>
             </div>
         </section>
 
-        <!-- SEÇÃO 16: ATIVIDADE PRÁTICA -->
+        <!-- SEÇÃO 29: ATIVIDADE PRÁTICA -->
         <section class="content-section" id="atividade">
-            <span class="section-label">16 · ATIVIDADE PRÁTICA</span>
+            <span class="section-label">29 · ATIVIDADE PRÁTICA</span>
             <h1>Hora de <span class="highlight">colocar a mão na massa</span>!</h1>
             
             <div class="content-block">
@@ -787,14 +1632,45 @@ Cliente ← (HTTP) ← Servidor</code></pre>
                 <div class="info-box example">
                     <strong>💡 Dica:</strong> Inspecione o código HTML de sites que você gosta! Clique com o botão direito → "Inspecionar" e veja como é feito!
                 </div>
+
+                <h3>🏆 Desafios por nível</h3>
+                <div class="challenge-box">
+                    <h4>🥉 Nível 1: Cartão de apresentação</h4>
+                    <ul>
+                        <li>Estrutura completa com <code>DOCTYPE</code>, <code>lang</code>, <code>charset</code>, <code>viewport</code> e <code>title</code></li>
+                        <li>Um <code>&lt;h1&gt;</code> com seu nome e <code>&lt;p&gt;</code> sobre você</li>
+                        <li>Use <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code> pelo significado</li>
+                        <li>Escreva <code>&lt;html&gt;</code> como texto visível usando entidades</li>
+                    </ul>
+                </div>
+                <div class="challenge-box">
+                    <h4>🥈 Nível 2: Página pessoal</h4>
+                    <ul>
+                        <li>Use <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> e <code>&lt;footer&gt;</code></li>
+                        <li>Lista de hobbies com <code>&lt;ul&gt;</code> e uma foto com <code>alt</code></li>
+                        <li>Links para redes sociais abrindo em nova aba</li>
+                        <li>Adicione <code>description</code> e as tags <code>og:*</code> no head</li>
+                        <li>Valide no W3C Validator até zerar os erros</li>
+                    </ul>
+                </div>
+                <div class="challenge-box">
+                    <h4>🥇 Nível 3: Modo hacker</h4>
+                    <ul>
+                        <li>Crie uma seção de perguntas frequentes com <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code></li>
+                        <li>Adicione um botão que abre um <code>popover</code> com seus contatos</li>
+                        <li>Guarde dados em atributos <code>data-*</code></li>
+                        <li>Remova o <code>DOCTYPE</code> e compare <code>document.compatMode</code> no console</li>
+                        <li>Abra o DevTools e compare "Exibir código-fonte" com "Inspecionar"</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <!-- SEÇÃO DE CONCLUSÃO -->
         <section class="content-section conclusion">
             <h1>🎓 Conclusão</h1>
-            <p>Nesta aula, você aprendeu os conceitos fundamentais do HTML, desde sua história até a compreensão de como funciona a web moderna. Entender a comunicação Cliente-Servidor, protocolos, navegadores e tipos de aplicações é essencial para qualquer desenvolvedor web.</p>
-            <p>Na próxima aula, vamos mergulhar nos detalhes das tags HTML e como estruturar um documento web corretamente!</p>
+            <p>Nesta aula, você aprendeu o que é o HTML e de onde ele veio, a estrutura básica de um documento, a anatomia de uma tag, elementos, atributos, as tags principais, o &lt;head&gt;, entidades e semântica. Também viu como a web funciona (cliente, servidor, protocolos, requisições e respostas) e como o navegador transforma texto em DOM e pixels na tela, além de hacks e boas práticas para escrever HTML profissional.</p>
+            <p>Na próxima aula, vamos mergulhar nas tags de texto e aprender a hierarquizar o conteúdo com semântica!</p>
         </section>
 
         <!-- NAVEGAÇÃO -->
